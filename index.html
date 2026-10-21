@@ -1,277 +1,376 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Flondy Dev</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flondy Store – Apps & Games von Flondy Dev.</title>
+<meta name="description" content="Alle Apps und Spiele von Flondy Dev. an einem Ort: Check your Love, App Vault, Drop It, Basketball Pro, Metro Dash, Wembi und mehr – für Android, iPhone und im Browser.">
+<link rel="canonical" href="https://flondy.github.io/app-store/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flondy Store – Apps & Games von Flondy Dev.">
+<meta property="og:description" content="14 Projekte, 10 Apps bei Google Play, 3 davon auch fürs iPhone.">
+<meta property="og:url" content="https://flondy.github.io/app-store/">
+<meta property="og:image" content="https://flondy.github.io/app-store/icons/flondy-logo.webp">
+<meta name="theme-color" content="#f2f5f1">
+<link rel="icon" type="image/png" href="icons/favicon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+try{var t=localStorage.getItem('flondy-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}
+</script>
 <style>
-
 :root{
---bg:#0f172a;
---text:#ffffff;
---card:rgba(255,255,255,0.08);
---accent:#22c55e;
+  --paper:#f2f5f1; --surface:#ffffff; --sunk:#e6ebe4; --ink:#131a12; --soft:#5a6658; --line:#d6ddd3;
+  --brand:#14a83a; --brand-ink:#0b7a27; --on-brand:#ffffff;
+  --shadow:0 1px 2px rgb(20 40 20 / .06), 0 8px 24px -12px rgb(20 40 20 / .18);
+  --r-xl:28px; --r-l:20px; --r-m:14px;
+  --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
+  color-scheme:light;
 }
-
-.light{
---bg:#f8fafc;
---text:#020617;
---card:rgba(255,255,255,0.7);
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#060907; --surface:#0f1510; --sunk:#151d16; --ink:#eef4ec; --soft:#94a191; --line:#223024;
+    --brand:#3bf05a; --brand-ink:#5bf576; --on-brand:#041006;
+    --shadow:0 1px 0 rgb(255 255 255 / .03) inset, 0 12px 30px -16px rgb(0 0 0 / .8);
+    color-scheme:dark;
+  }
 }
-
-*{
-box-sizing:border-box;
+:root[data-theme="dark"]{
+  --paper:#060907; --surface:#0f1510; --sunk:#151d16; --ink:#eef4ec; --soft:#94a191; --line:#223024;
+  --brand:#3bf05a; --brand-ink:#5bf576; --on-brand:#041006;
+  --shadow:0 1px 0 rgb(255 255 255 / .03) inset, 0 12px 30px -16px rgb(0 0 0 / .8);
+  color-scheme:dark;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);min-height:100vh}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:10px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
+/* header */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand img{width:38px;height:38px;border-radius:11px}
+.brand b{font:800 20px/1 var(--display);letter-spacing:-.02em}
+.brand small{display:block;font:500 12px/1 var(--body);color:var(--soft);margin-top:3px}
+.search{flex:1;max-width:460px;margin-left:auto;position:relative}
+.search input{width:100%;height:44px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 16px 0 42px;font:500 15px var(--body)}
+.search input::placeholder{color:var(--soft)}
+.search svg{position:absolute;left:15px;top:50%;translate:0 -50%;width:18px;height:18px;color:var(--soft)}
+.theme{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;flex-shrink:0}
+.theme svg{width:20px;height:20px}
+
+/* tabs */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:18px 0 4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;border:1px solid var(--line);background:transparent;border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px;cursor:pointer;color:var(--soft)}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab span{opacity:.6;margin-left:6px;font-weight:500}
+
+/* hero / featured */
+.intro{padding:28px 0 18px;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.intro h1{font:800 clamp(38px,6vw,68px)/.95 var(--display);letter-spacing:-.035em;margin:0;max-width:12ch}
+.intro p{margin:0;color:var(--soft);max-width:38ch;font-size:17px}
+.feat{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px) / 3);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 22px;scrollbar-width:thin}
+.fcard{scroll-snap-align:start;position:relative;border-radius:var(--r-xl);overflow:hidden;min-height:340px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;isolation:isolate;cursor:pointer;border:0;text-align:left;
+  background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--c) 85%,#fff 15%) 0%,var(--c) 38%,color-mix(in srgb,var(--c) 30%,#000 70%) 100%)}
+.fcard .big{position:absolute;right:-30px;top:30px;width:230px;height:230px;border-radius:52px;rotate:-10deg;box-shadow:0 30px 60px -20px rgb(0 0 0 / .55);z-index:-1;transition:rotate .5s cubic-bezier(.2,.8,.2,1),translate .5s cubic-bezier(.2,.8,.2,1)}
+.fcard:hover .big,.fcard:focus-visible .big{rotate:-4deg;translate:-8px -6px}
+.fcard .kick{font:600 14px var(--body);opacity:.9;display:flex;gap:8px;align-items:center}
+.fcard .kick i{font-style:normal;background:rgb(255 255 255 / .2);padding:4px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.fcard .h{display:block;font:800 clamp(30px,4vw,40px)/1 var(--display);letter-spacing:-.03em;margin:0 0 8px;max-width:11ch;text-shadow:0 2px 20px rgb(0 0 0 / .25)}
+.fcard .p{display:block;margin:0 0 16px;max-width:30ch;opacity:.92}
+.fcard .plats{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--body);padding:6px 11px;border-radius:999px;background:rgb(0 0 0 / .28);color:#fff}
+.chip svg{width:14px;height:14px}
+
+/* shelves */
+.shelf{padding:26px 0 8px;border-top:1px solid var(--line);margin-top:10px}
+.shelf-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:10px}
+.shelf h2{font:700 28px/1.1 var(--display);letter-spacing:-.025em;margin:0}
+.shelf-h p{margin:0;color:var(--soft);font-size:15px}
+.rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));column-gap:28px}
+.row{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;text-align:left;width:100%}
+.row img{width:72px;height:72px;border-radius:17px;box-shadow:var(--shadow);background:var(--sunk)}
+.row .t{display:block;margin:0;font:700 17px/1.2 var(--body);letter-spacing:-.01em}
+.row .sub{margin:3px 0 0;color:var(--soft);font-size:14px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.row .meta{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.tag{font:600 12px var(--body);padding:3px 8px;border-radius:6px;background:var(--sunk);color:var(--soft)}
+.tag.ios{color:var(--ink)}
+.tag.dev{background:transparent;border:1px dashed var(--line)}
+.get{font:700 14px var(--body);background:var(--sunk);color:var(--brand-ink);border-radius:999px;padding:8px 16px;white-space:nowrap}
+.row:hover .get{background:var(--brand);color:var(--on-brand)}
+.empty{padding:40px 0;color:var(--soft);font-size:17px}
+.empty button{border:0;background:none;color:var(--brand-ink);font-weight:700;cursor:pointer;text-decoration:underline;padding:0}
+
+/* platform band */
+.band{margin:40px 0 0;border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}
+.band a{padding:26px;text-decoration:none;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--line)}
+.band a:last-child{border-right:0}
+.band a:hover h3{color:var(--brand-ink)}
+.band strong{font:800 44px/1 var(--display);letter-spacing:-.03em}
+.band h3{margin:6px 0 0;font:700 17px var(--body)}
+.band p{margin:0;color:var(--soft);font-size:14px}
+
+footer{padding:56px 0 40px;color:var(--soft);font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink);text-decoration:underline}
+
+/* detail sheet */
+dialog{border:0;padding:0;background:var(--surface);color:var(--ink);width:min(640px,100% - 24px);max-height:min(88vh,860px);border-radius:var(--r-xl);box-shadow:0 40px 120px -20px rgb(0 0 0 / .55)}
+dialog::backdrop{background:rgb(4 8 5 / .55);backdrop-filter:blur(4px)}
+dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
+@keyframes sheet{from{opacity:0;transform:translateY(24px) scale(.98)}}
+.d-head{position:relative;padding:28px 28px 22px;display:grid;grid-template-columns:112px 1fr;gap:20px;align-items:center;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 22%,transparent),transparent)}
+.d-head img{width:112px;height:112px;border-radius:26px;box-shadow:0 18px 40px -16px color-mix(in srgb,var(--c) 70%,#000)}
+.d-head h2{margin:0;font:800 30px/1.05 var(--display);letter-spacing:-.03em}
+.d-head p{margin:6px 0 0;color:var(--soft)}
+.x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:0;background:var(--sunk);cursor:pointer;font-size:20px;line-height:1}
+.d-body{padding:0 28px 28px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:700 15px var(--body);padding:12px 18px;border-radius:14px;background:var(--ink);color:var(--paper)}
+.btn svg{width:20px;height:20px}
+.btn small{display:block;font:500 11px/1 var(--body);opacity:.7}
+.btn span{line-height:1.1}
+.btn.ghost{background:var(--sunk);color:var(--ink)}
+.btn.brand{background:var(--brand);color:var(--on-brand)}
+.d-body h3{font:700 15px var(--body);margin:20px 0 8px;color:var(--soft)}
+.d-body p{margin:0}
+.d-body ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.d-body li{display:grid;grid-template-columns:22px 1fr;gap:6px}
+.d-body li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);margin-top:8px}
+.note{margin-top:18px!important;padding:12px 14px;border-radius:12px;background:var(--sunk);font-size:14px;color:var(--soft)}
+.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;font-size:14px}
+.links a{color:var(--soft)}
+.links a:hover{color:var(--ink)}
+
+@media (max-width:1040px){.feat{grid-auto-columns:46%}}
+@media (max-width:760px){
+  .top-in{height:auto;padding:12px 0;flex-wrap:wrap}
+  .search{order:3;flex-basis:100%;max-width:none}
+  .theme{margin-left:auto}
+  .rows{grid-template-columns:1fr}
+  .band{grid-template-columns:1fr}
+  .band a{border-right:0;border-bottom:1px solid var(--line)}
+  .feat{grid-auto-columns:86%}
+  .shelf-h{flex-direction:column;gap:2px}
+  .fcard{min-height:320px}
+  .fcard .big{width:180px;height:180px;border-radius:42px;right:-24px}
+  .d-head{grid-template-columns:84px 1fr;padding:24px 20px 18px}
+  .d-head img{width:84px;height:84px;border-radius:20px}
+  .d-head h2{font-size:24px}
+  .d-body{padding:0 20px 24px}
 }
-
-/* Aurora Background */
-
-.aurora{
-position:fixed;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle at 30% 30%, #3b82f6, transparent 40%),
-radial-gradient(circle at 70% 40%, #22c55e, transparent 40%),
-radial-gradient(circle at 50% 80%, #a855f7, transparent 40%);
-filter:blur(120px);
-animation:auroraMove 20s infinite alternate linear;
-z-index:-1;
-opacity:0.6;
-}
-
-@keyframes auroraMove{
-0%{transform:translate(-20%,-10%)}
-100%{transform:translate(10%,20%)}
-}
-
-/* Header */
-
-header{
-padding:60px 20px 40px;
-text-align:center;
-}
-
-h1{
-font-size:42px;
-margin:0;
-}
-
-.subtitle{
-opacity:0.7;
-margin-top:10px;
-}
-
-/* Toggle */
-
-.toggle{
-position:absolute;
-top:20px;
-right:20px;
-cursor:pointer;
-background:var(--card);
-padding:8px 14px;
-border-radius:30px;
-backdrop-filter:blur(10px);
-font-size:14px;
-}
-
-/* Grid */
-
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
-max-width:1100px;
-margin:auto;
-padding:40px 20px 60px;
-}
-
-/* Cards */
-
-.card{
-position:relative;
-background:var(--card);
-border-radius:20px;
-padding:30px;
-text-align:center;
-backdrop-filter:blur(12px);
-transition:0.3s;
-overflow:hidden;
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:-2px;
-border-radius:22px;
-background:linear-gradient(
-45deg,
-#22c55e,
-#3b82f6,
-#a855f7,
-#22c55e
-);
-background-size:300%;
-animation:neonBorder 6s linear infinite;
-z-index:-1;
-filter:blur(8px);
-opacity:0;
-transition:0.3s;
-}
-
-.card:hover::before{
-opacity:1;
-}
-
-@keyframes neonBorder{
-0%{background-position:0%}
-100%{background-position:300%}
-}
-
-.card:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
-
-/* App Icons */
-
-.card img{
-width:90px;
-height:90px;
-border-radius:22px;
-margin-bottom:15px;
-animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-100%{transform:translateY(0)}
-}
-
-.card:hover img{
-animation:wiggle 0.6s ease-in-out;
-}
-
-@keyframes wiggle{
-0%{transform:rotate(0deg)}
-25%{transform:rotate(5deg)}
-50%{transform:rotate(-5deg)}
-75%{transform:rotate(3deg)}
-100%{transform:rotate(0deg)}
-}
-
-.card h3{
-margin:8px 0;
-font-weight:600;
-}
-
-/* Button */
-
-.btn{
-display:inline-block;
-margin-top:12px;
-padding:10px 18px;
-border-radius:10px;
-text-decoration:none;
-font-weight:600;
-background:var(--accent);
-color:white;
-transition:0.2s;
-}
-
-.btn:hover{
-opacity:0.9;
-}
-
-/* Footer */
-
-footer{
-text-align:center;
-padding:30px;
-opacity:0.6;
-font-size:14px;
-}
-
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-
 </head>
-
 <body>
-
-<div class="aurora"></div>
-
-<div class="toggle" onclick="toggleTheme()">🌙 Dark / Light</div>
-
-<header>
-<h1>Flondy Dev</h1>
-<div class="subtitle">Mobile Apps & Games</div>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="./" aria-label="Flondy Store Startseite">
+      <img src="icons/flondy-logo.webp" alt="" width="38" height="38">
+      <span><b>Flondy Store</b><small>Apps & Games von Flondy Dev.</small></span>
+    </a>
+    <label class="search">
+      <span class="sr">Apps durchsuchen</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Apps und Spiele durchsuchen" autocomplete="off">
+    </label>
+    <button class="theme" id="theme" type="button" aria-label="Hell oder dunkel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+    </button>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
+  <nav class="tabs" aria-label="Kategorien" id="tabs"></nav>
 
-<div class="card">
-<img src="./appicons/Drop-It.png">
-<h3>Stack Tower</h3>
-<a class="btn" href="https://play.google.com/store/apps/details?id=dev.flondy.drop" target="_blank" rel="noopener noreferrer">Play Store</a>
-</div>
+  <section id="today" aria-labelledby="t-today">
+    <div class="intro">
+      <h1 id="t-today">Jetzt auch auf dem iPhone.</h1>
+      <p>Check your Love, App Vault und Drop It gibt es ab sofort bei Google Play und im App Store.</p>
+    </div>
+    <div class="feat" id="feat"></div>
+  </section>
 
-<div class="card">
-<img src="./appicons/Basketball-Pro.png">
-<h3>Basketball Pro</h3>
-<a class="btn" href="https://play.google.com/store/apps/details?id=dev.flondy.Basketball" target="_blank" rel="noopener noreferrer">Play Store</a>
-</div>
+  <div id="shelves"></div>
 
-<div class="card">
-<img src="./appicons/Wembi.png">
-<h3>Wembi der kleine Vogel</h3>
-<a class="btn" href="https://play.google.com/store/apps/details?id=dev.flondy.wembi" target="_blank" rel="noopener noreferrer">Play Store</a>
-</div>
-
-<div class="card">
-<img src="./appicons/Lumina.png">
-<h3>Lumina AI</h3>
-<a class="btn" href="https://lumina-ai-373390161457.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open App</a>
-</div>
-
-<div class="card">
-<img src="./appicons/My-Notes.png">
-<h3>Notizen & Listen</h3>
-<a class="btn" href="https://play.google.com/store/apps/details?id=dev.flondy.mynotes" target="_blank" rel="noopener noreferrer">Play Store</a>
-</div>
-
-<div class="card">
-<img src="./appicons/My-Lamp.png">
-<h3>LED Taschenlampe Pro</h3>
-<a class="btn" href="https://play.google.com/store/apps/details?id=dev.flondy.mylamp" target="_blank" rel="noopener noreferrer">Play Store</a>
-</div>
-
-</div>
+  <section class="band" aria-label="Flondy auf allen Plattformen">
+    <a href="https://play.google.com/store/apps/dev?id=6892475632884505831" target="_blank" rel="noopener"><strong id="n-play">10</strong><h3>Apps bei Google Play</h3><p>Zum Entwicklerprofil Flondy Dev.</p></a>
+    <a href="#" data-tab="ios"><strong id="n-ios">3</strong><h3>Apps fürs iPhone</h3><p>Im Apple App Store verfügbar</p></a>
+    <a href="#" data-tab="web"><strong id="n-web">3</strong><h3>Apps im Browser</h3><p>Ohne Installation ausprobieren</p></a>
+  </section>
+</main>
 
 <footer>
-© 2026 Flondy Dev
+  <div class="wrap foot">
+    <span>© 2019–2026 Flondy Dev. · Kontakt: <a href="mailto:flondy.dev@gmail.com">flondy.dev@gmail.com</a></span>
+    <nav aria-label="Weitere Links">
+      <a href="https://flondy.github.io/Flondy.Dev/">Flondy.Dev</a>
+      <a href="https://play.google.com/store/apps/dev?id=6892475632884505831" target="_blank" rel="noopener">Google Play</a>
+      <a href="https://linktr.ee/Flondy" target="_blank" rel="noopener">Linktree</a>
+      <a href="https://flondydev.wixsite.com/flondy/downloads" target="_blank" rel="noopener">Downloads (Wix)</a>
+      <a href="https://www.instagram.com/flondy.dev" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@flondy.dev" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.youtube.com/@Flondy-dev" target="_blank" rel="noopener">YouTube</a>
+      <a href="app-ads.txt">app-ads.txt</a>
+    </nav>
+  </div>
 </footer>
 
+<dialog id="sheet" aria-labelledby="d-name"></dialog>
+
+<script src="apps.js"></script>
 <script>
+(() => {
+  const D = window.FLONDY, apps = D.apps;
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const ico = {
+    play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>',
+    phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>',
+    web:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>'
+  };
+  const typeName = {game:'Spiel', app:'App', web:'Web-App'};
+  const tabs = [
+    {id:'all', label:'Entdecken'},
+    {id:'game', label:'Spiele', f:a=>a.type==='game'},
+    {id:'app', label:'Apps', f:a=>a.type==='app' && a.status==='live'},
+    {id:'ios', label:'iPhone', f:a=>!!a.ios},
+    {id:'web', label:'Im Browser', f:a=>a.status==='web'},
+    {id:'dev', label:'Demnächst', f:a=>a.status==='dev'}
+  ];
+  const shelves = [
+    {id:'game', title:'Spiele', sub:'Kurze Runden, hohe Scores'},
+    {id:'app', title:'Apps', sub:'Für Alltag, Ordnung und Gesundheit'},
+    {id:'web', title:'Im Browser', sub:'Sofort ausprobieren, ohne Installation'},
+    {id:'dev', title:'Demnächst', sub:'Im Test, noch nicht im Store'}
+  ];
+  let tab = 'all';
 
-function toggleTheme(){
-document.body.classList.toggle("light")
-}
+  $('#n-play').textContent = apps.filter(a => a.play).length;
+  $('#n-ios').textContent = apps.filter(a => a.ios).length;
+  $('#n-web').textContent = apps.filter(a => a.status === 'web').length;
 
+  function tags(a){
+    const t = [];
+    if (a.play) t.push('<span class="tag">Android</span>');
+    if (a.ios) t.push('<span class="tag ios">iPhone</span>');
+    if (a.web) t.push('<span class="tag">Browser</span>');
+    if (a.status === 'dev') t.push('<span class="tag dev">In Entwicklung</span>');
+    return t.join('');
+  }
+  const action = a => a.status === 'dev' ? 'Ansehen' : a.status === 'web' ? 'Öffnen' : 'Laden';
+  const row = a => `<button class="row" type="button" data-app="${a.id}" aria-label="${esc(a.full)} – Details">
+      <img src="icons/${a.id}.webp" alt="" width="72" height="72" loading="lazy">
+      <span><span class="t">${esc(a.name)}</span><span class="sub">${esc(a.tagline)}</span><span class="meta">${tags(a)}</span></span>
+      <span class="get" aria-hidden="true">${action(a)}</span></button>`;
+
+  function renderTabs(){
+    $('#tabs').innerHTML = tabs.map(t => {
+      const n = t.f ? apps.filter(t.f).length : apps.length;
+      return `<button class="tab" type="button" data-tab="${t.id}" aria-pressed="${t.id===tab}">${t.label}<span>${n}</span></button>`;
+    }).join('');
+  }
+  function renderFeat(){
+    $('#feat').innerHTML = apps.filter(a => a.featured).map(a => `
+      <button class="fcard" type="button" data-app="${a.id}" style="--c:${a.color}" aria-label="${esc(a.full)} – Details">
+        <img class="big" src="icons/${a.id}.webp" alt="" width="230" height="230">
+        <span class="kick"><i>${a.type==='game'?'Spiel':'App'} · ${esc(a.category)}</i></span>
+        <span><span class="h">${esc(a.name)}</span><span class="p">${esc(a.tagline)}</span>
+        <span class="plats"><span class="chip">${ico.play}Google Play</span><span class="chip">${ico.phone}iPhone</span></span></span>
+      </button>`).join('');
+  }
+  function renderShelves(){
+    const q = $('#q').value.trim().toLowerCase();
+    const showToday = tab === 'all' && !q;
+    $('#today').hidden = !showToday;
+    let html = '';
+    if (q) {
+      const hits = apps.filter(a => [a.name,a.full,a.tagline,a.category,a.about].join(' ').toLowerCase().includes(q));
+      html = `<section class="shelf"><div class="shelf-h"><h2>Ergebnisse für „${esc(q)}“</h2><p>${hits.length} gefunden</p></div>` +
+        (hits.length ? `<div class="rows">${hits.map(row).join('')}</div>` : `<p class="empty">Keine App passt zu „${esc(q)}“. <button type="button" id="clear">Suche zurücksetzen</button></p>`) + '</section>';
+    } else if (tab === 'all') {
+      html = shelves.map(s => {
+        const list = apps.filter(tabs.find(t => t.id === s.id).f);
+        return list.length ? `<section class="shelf" aria-label="${s.title}"><div class="shelf-h"><h2>${s.title}</h2><p>${s.sub}</p></div><div class="rows">${list.map(row).join('')}</div></section>` : '';
+      }).join('');
+    } else {
+      const t = tabs.find(t => t.id === tab);
+      const list = apps.filter(t.f);
+      html = `<section class="shelf"><div class="shelf-h"><h2>${t.label}</h2><p>${list.length} ${list.length===1?'Eintrag':'Einträge'}</p></div><div class="rows">${list.map(row).join('')}</div></section>`;
+    }
+    $('#shelves').innerHTML = html;
+    const c = $('#clear'); if (c) c.onclick = () => { $('#q').value = ''; renderShelves(); $('#q').focus(); };
+  }
+  function setTab(id){ tab = id; $('#q').value=''; renderTabs(); renderShelves(); }
+
+  const sheet = $('#sheet');
+  function open(id, push = true){
+    const a = apps.find(x => x.id === id); if (!a) return;
+    const btns = [];
+    if (a.play) btns.push(`<a class="btn" href="${a.play}" target="_blank" rel="noopener">${ico.play}<span><small>Jetzt bei</small>Google Play</span></a>`);
+    if (a.ios) btns.push(`<a class="btn" href="${a.ios}" target="_blank" rel="noopener">${ico.phone}<span><small>Laden im</small>App Store</span></a>`);
+    if (a.web) btns.push(`<a class="btn brand" href="${a.web}" target="_blank" rel="noopener">${ico.web}<span><small>Ohne Installation</small>Im Browser öffnen</span></a>`);
+    if (a.landing) btns.push(`<a class="btn ghost" href="${a.landing}" target="_blank" rel="noopener"><span><small>Alles über die App</small>Website ansehen</span></a>`);
+    sheet.style.setProperty('--c', a.color);
+    sheet.innerHTML = `
+      <div class="d-head" style="--c:${a.color}">
+        <img src="icons/${a.id}.webp" alt="${esc(a.name)} App-Icon" width="112" height="112">
+        <div><h2 id="d-name">${esc(a.full)}</h2><p>${typeName[a.type]} · ${esc(a.category)}</p><div class="meta" style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">${tags(a)}</div></div>
+        <button class="x" type="button" aria-label="Schließen" data-close>×</button>
+      </div>
+      <div class="d-body">
+        <div class="cta">${btns.join('')}</div>
+        <p>${esc(a.about)}</p>
+        <h3>Das kann ${a.type==='game'?'das Spiel':'die App'}</h3>
+        <ul>${a.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
+        ${a.note ? `<p class="note">${esc(a.note)}</p>` : ''}
+        <div class="links">
+          ${a.privacy ? `<a href="${a.privacy}" target="_blank" rel="noopener">Datenschutz</a>` : ''}
+          <a href="mailto:flondy.dev@gmail.com?subject=${encodeURIComponent(a.full)}">Support</a>
+          <a href="#app=${a.id}" data-share>Link kopieren</a>
+        </div>
+      </div>`;
+    if (!sheet.open) sheet.showModal();
+    if (push) history.replaceState(null, '', '#app=' + a.id);
+  }
+  function close(){ sheet.close(); }
+  sheet.addEventListener('close', () => { if (location.hash.startsWith('#app=')) history.replaceState(null, '', location.pathname + location.search); });
+  sheet.addEventListener('click', e => {
+    if (e.target === sheet || e.target.closest('[data-close]')) close();
+    const s = e.target.closest('[data-share]');
+    if (s) { e.preventDefault(); const url = location.href.split('#')[0] + s.getAttribute('href');
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => { s.textContent = 'Link kopiert'; }, () => { s.textContent = url; }); }
+  });
+
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-tab]');
+    if (t) { e.preventDefault(); setTab(t.dataset.tab); window.scrollTo({top:0}); return; }
+    const a = e.target.closest('[data-app]');
+    if (a) open(a.dataset.app);
+  });
+  $('#q').addEventListener('input', renderShelves);
+
+  const root = document.documentElement;
+  $('#theme').addEventListener('click', () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('flondy-theme', root.dataset.theme); } catch (e) {}
+  });
+
+  renderTabs(); renderFeat(); renderShelves();
+  const m = location.hash.match(/^#app=([\w-]+)/); if (m) open(m[1], false);
+})();
 </script>
-
 </body>
 </html>

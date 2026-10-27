@@ -141,7 +141,8 @@ window.FLONDY = {
       tagline: 'Your imagination, illuminated. KI-Fotobearbeitung und Videos in einem Studio.',
       about: 'Lumina AI vereint kreative Fotobearbeitung und KI-Videogenerierung in einem Studio: Fotos per Texteingabe bearbeiten, Bilder in bewegte Szenen verwandeln und den eigenen Look mit Filtern, Formaten und App-Icons gestalten. Die App ist in Entwicklung; die Website zeigt eine Vorschau.',
       features: ['AI Photo Studio: Fotos per Texteingabe bearbeiten', 'Image to Motion: aus Bildern werden Videos', 'Filter, Seitenverhältnisse und Ausgabeoptionen', 'Eigene App-Icons, Light- und Dark-Ansicht', 'Deutsch und Englisch'],
-      landing: 'https://marcel-2025.github.io/Lumina-Studio-AI/'
+      landing: 'https://marcel-2025.github.io/Lumina-Studio-AI/',
+      privacy: 'https://marcel-2025.github.io/Lumina-Studio-AI/app-datenschutz.html'
     },
     {
       id: 'lingo', name: 'Lingo', full: 'Lingo – Sprachen lernen',
@@ -160,6 +161,16 @@ window.FLONDY = {
       about: 'Die Musik-Web-App zeigt neue Releases direkt im Browser.',
       features: ['Läuft im Browser', 'Keine Installation'],
       web: 'https://v0-music-release-web-app.vercel.app/'
+    },
+    {
+      id: 'live-wallpapers', name: 'Live Wallpapers', full: 'Live Wallpapers – ArtIsFantasy',
+      type: 'app', category: 'Personalisierung', status: 'dev', color: '#7b5bd6',
+      icon: 'https://marcel-2025.github.io/Live-Wallpapers/assets/store-icon.webp',
+      tagline: 'Ein bisschen Magie. Für deinen Bildschirm.',
+      about: 'Fantasy-Kunst und animierte Live-Wallpaper von ArtIsFantasy: Schlösser, Wälder und Lichtwelten in Kollektionen, die sich mit den Jahreszeiten verändern. Die App erscheint bald bei Google Play.',
+      features: ['Fantasy-Motive in thematischen Kollektionen', 'Animierte Live-Wallpaper für Android', 'Saisonale Designs von Halloween bis Weihnachten', 'Favoriten und Bibliothek', 'Premium-Kollektionen per Credits'],
+      landing: 'https://marcel-2025.github.io/Live-Wallpapers/',
+      privacy: 'https://marcel-2025.github.io/Live-Wallpapers/datenschutz.html'
     },
     {
       id: 'screenshot-sorting-pro', name: 'Screenshot Sorting Pro', full: 'Screenshot Sorting Pro',

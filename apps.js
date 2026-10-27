@@ -6,6 +6,7 @@ window.FLONDY = {
     name: 'Flondy Dev.',
     mail: 'flondy.dev@gmail.com',
     play: 'https://play.google.com/store/apps/dev?id=6892475632884505831',
+    appStore: 'https://apps.apple.com/de/developer/marcel-single/id6823302676',
     store: 'https://flondy.github.io/app-store/',
     site: 'https://flondy.github.io/Flondy.Dev/',
     socials: [
@@ -31,7 +32,7 @@ window.FLONDY = {
       features: ['Love-Score aus zwei Namen, immer gleich für dasselbe Paar', 'Verlauf und Favoriten', 'Ergebnis als Bildkarte teilen', 'Funktioniert offline', 'Premium: keine Werbung, mehr Designs und Animationen'],
       note: 'Nur zur Unterhaltung.',
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.checkyourlove',
-      ios: 'https://apps.apple.com/app/id6824271482',
+      ios: 'https://apps.apple.com/de/app/check-your-love-liebestest/id6824271482',
       landing: 'https://marcel-2025.github.io/Check-your-Love/',
       updated: '2026-10-05'
     },
@@ -42,7 +43,7 @@ window.FLONDY = {
       about: 'App Vault ordnet deine App-Sammlung in eigene Listen, merkt sich auch deinstallierte Apps und führt dich beim Handywechsel Schritt für Schritt durch die Neuinstallation.',
       features: ['Apps suchen, sortieren und filtern', 'Eigene Listen mit Emoji und Farbe', 'Deinstallierte Apps bleiben in der Liste', 'Handywechsel-Assistent', 'Notizen pro App, Listen als Text teilen', 'Export und Import als JSON'],
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.AV',
-      ios: 'https://apps.apple.com/app/app-vault-apps-nutzung/id6823302674',
+      ios: 'https://apps.apple.com/de/app/app-vault-apps-nutzung/id6823302674',
       landing: 'https://marcel-2025.github.io/App-Vault-Landingpage/',
       updated: '2026-10-18'
     },
@@ -53,7 +54,7 @@ window.FLONDY = {
       about: 'Ein Stack-Spiel mit einem Ziel: im richtigen Moment loslassen. Perfekte Drops geben Bonuseffekte, der Turm wächst, die Kamera zieht mit.',
       features: ['Neon-Design und 27 Block-Skins', 'Tägliche Turm-Challenge', '45 Erfolge und tägliche Missionen', 'Spielerlevel und Tagesbonus', 'Gratis-Geschenk alle 4 Stunden'],
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.drop',
-      ios: 'https://apps.apple.com/app/id6823741374',
+      ios: 'https://apps.apple.com/de/app/drop-it-stack-game/id6823741374',
       landing: 'https://flondy.github.io/drop-it-landing-page/',
       updated: '2026-10-14'
     },
@@ -110,24 +111,26 @@ window.FLONDY = {
     },
     {
       id: 'medtracker-pro', name: 'MedTracker Pro', full: 'MedTracker Pro',
-      type: 'app', category: 'Gesundheit', status: 'live', color: '#22b8a5',
+      type: 'app', category: 'Gesundheit', status: 'live', color: '#22b8a5', featured: true,
       tagline: 'Medikamenteneinnahme im Blick, Tag für Tag.',
       about: 'Hake deine Einnahmen täglich ab und sieh im Kalender, was genommen wurde und was nicht. Vergangene Zeiträume kannst du nachtragen.',
       features: ['Kalender: genommen, verpasst, offen', 'Medikamentenliste mit Vorschlägen', 'Tägliches Abhaken', 'Zeiträume nachtragen'],
       note: 'Ersetzt keine ärztliche Beratung.',
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.medtracker',
+      ios: 'https://apps.apple.com/de/app/medtracker-pro-medikamente/id6824628419',
       landing: 'https://marcel-2025.github.io/MedTracker-Pro/',
       privacy: 'https://flondy.github.io/MedTracker-privacy/',
       updated: '2026-03-16'
     },
     {
       id: 'ema-mind', name: 'EMA Mind', full: 'EMA Mind',
-      type: 'app', category: 'Gesundheit', status: 'live', color: '#3a8fd6',
+      type: 'app', category: 'Gesundheit', status: 'live', color: '#3a8fd6', featured: true,
       tagline: 'Stimmung verstehen. Muster erkennen.',
       about: 'Kurze Check-ins bis zu dreimal am Tag. Die Trends über 7, 30 und 90 Tage zeigen dir Muster. Deine Daten bleiben auf dem Gerät.',
       features: ['Bis zu 3 kurze Check-ins pro Tag', 'Trends über 7, 30 und 90 Tage', 'Erinnerungen', 'Daten bleiben lokal', 'Export als CSV oder JSON'],
       note: 'Ein Werkzeug zur Selbstbeobachtung, keine Diagnose.',
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.emamind',
+      ios: 'https://apps.apple.com/de/app/ema-mind-stimmung-gedanken/id6824652243',
       landing: 'https://marcel-2025.github.io/EMA-Mind/',
       privacy: 'https://marcel-2025.github.io/EMA-Mind/datenschutz.html',
       updated: '2026-09-27'

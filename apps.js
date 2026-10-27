@@ -137,11 +137,11 @@ window.FLONDY = {
     },
     {
       id: 'lumina-ai', name: 'Lumina AI', full: 'Lumina AI',
-      type: 'web', category: 'KI', status: 'web', color: '#c56bff',
-      tagline: 'Die Flondy-KI-App direkt im Browser.',
-      about: 'Lumina AI läuft im Browser, ohne Installation. Öffne die App und leg direkt los.',
-      features: ['Läuft im Browser', 'Keine Installation'],
-      web: 'https://lumina-ai-373390161457.us-west1.run.app'
+      type: 'app', category: 'KI · Foto & Video', status: 'dev', color: '#c56bff',
+      tagline: 'Your imagination, illuminated. KI-Fotobearbeitung und Videos in einem Studio.',
+      about: 'Lumina AI vereint kreative Fotobearbeitung und KI-Videogenerierung in einem Studio: Fotos per Texteingabe bearbeiten, Bilder in bewegte Szenen verwandeln und den eigenen Look mit Filtern, Formaten und App-Icons gestalten. Die App ist in Entwicklung; die Website zeigt eine Vorschau.',
+      features: ['AI Photo Studio: Fotos per Texteingabe bearbeiten', 'Image to Motion: aus Bildern werden Videos', 'Filter, Seitenverhältnisse und Ausgabeoptionen', 'Eigene App-Icons, Light- und Dark-Ansicht', 'Deutsch und Englisch'],
+      landing: 'https://marcel-2025.github.io/Lumina-Studio-AI/'
     },
     {
       id: 'lingo', name: 'Lingo', full: 'Lingo – Sprachen lernen',

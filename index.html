@@ -243,6 +243,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     web:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>'
   };
   const typeName = {game:'Spiel', app:'App', web:'Web-App'};
+  const iconOf = a => a.icon || `icons/${a.id}.webp`;
   const tabs = [
     {id:'all', label:'Entdecken'},
     {id:'game', label:'Spiele', f:a=>a.type==='game'},
@@ -273,7 +274,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
   }
   const action = a => a.status === 'dev' ? 'Ansehen' : a.status === 'web' ? 'Öffnen' : 'Laden';
   const row = a => `<button class="row" type="button" data-app="${a.id}" aria-label="${esc(a.full)} – Details">
-      <img src="icons/${a.id}.webp" alt="" width="72" height="72" loading="lazy">
+      <img src="${iconOf(a)}" alt="" width="72" height="72" loading="lazy">
       <span><span class="t">${esc(a.name)}</span><span class="sub">${esc(a.tagline)}</span><span class="meta">${tags(a)}</span></span>
       <span class="get" aria-hidden="true">${action(a)}</span></button>`;
 
@@ -286,7 +287,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
   function renderFeat(){
     $('#feat').innerHTML = apps.filter(a => a.featured).map(a => `
       <button class="fcard" type="button" data-app="${a.id}" style="--c:${a.color}" aria-label="${esc(a.full)} – Details">
-        <img class="big" src="icons/${a.id}.webp" alt="" width="230" height="230">
+        <img class="big" src="${iconOf(a)}" alt="" width="230" height="230">
         <span class="kick"><i>${a.type==='game'?'Spiel':'App'} · ${esc(a.category)}</i></span>
         <span><span class="h">${esc(a.name)}</span><span class="p">${esc(a.tagline)}</span>
         <span class="plats"><span class="chip">${ico.play}Google Play</span><span class="chip">${ico.phone}iPhone</span></span></span>
@@ -327,7 +328,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     sheet.style.setProperty('--c', a.color);
     sheet.innerHTML = `
       <div class="d-head" style="--c:${a.color}">
-        <img src="icons/${a.id}.webp" alt="${esc(a.name)} App-Icon" width="112" height="112">
+        <img src="${iconOf(a)}" alt="${esc(a.name)} App-Icon" width="112" height="112">
         <div><h2 id="d-name">${esc(a.full)}</h2><p>${typeName[a.type]} · ${esc(a.category)}</p><div class="meta" style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">${tags(a)}</div></div>
         <button class="x" type="button" aria-label="Schließen" data-close>×</button>
       </div>

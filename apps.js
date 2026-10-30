@@ -174,6 +174,16 @@ window.FLONDY = {
       privacy: 'https://marcel-2025.github.io/Live-Wallpapers/datenschutz.html'
     },
     {
+      id: 'winter-arcade', name: 'Winter-Arcade', full: 'Winter-Arcade – Fünf Winterspiele',
+      type: 'game', category: 'Arcade', status: 'dev', color: '#3f8fe0',
+      icon: 'https://marcel-2025.github.io/Winter-Arcade-Landingpage/assets/store-icon.webp',
+      tagline: 'Fünf Winterspiele. Ein Abenteuer.',
+      about: 'Fünf Mini-Games in einer frostigen Arcade: Rolling Snowball, Pinguin-Rutschpartie, Frostbound Survivors, Pinguin-Schubsen und Echo Run. Das Spiel entsteht mit Unity 6 für Android und iPhone.',
+      features: ['Fünf eigenständige Mini-Games', 'Action, Rätsel, Survival und Party', 'Kurze Runden mit Touch-Steuerung', 'Sternebewertung pro Runde', 'Für Android und iPhone geplant'],
+      landing: 'https://marcel-2025.github.io/Winter-Arcade-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Winter-Arcade-Landingpage/app-datenschutz.html'
+    },
+    {
       id: 'screenshot-sorting-pro', name: 'Screenshot Sorting Pro', full: 'Screenshot Sorting Pro',
       type: 'app', category: 'Tools', status: 'dev', color: '#4f7dff',
       tagline: 'Screenshots automatisch in Ordner sortieren.',

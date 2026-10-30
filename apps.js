@@ -101,7 +101,8 @@ window.FLONDY = {
     },
     {
       id: 'my-notes', name: 'Notizen & Listen', full: 'Notizen & Listen (My Notes)',
-      type: 'app', category: 'Tools', status: 'live', color: '#f5c542',
+      type: 'app', category: 'Tools', status: 'live', color: '#a8744a',
+      icon: 'https://marcel-2025.github.io/My-Notes-privacy/store-icon.webp',
       tagline: 'Notizen und Listen festhalten, ordnen, wiederfinden.',
       about: 'Offline, ohne Konto und ohne Cloud. Sortiere Notizen per Drag & Drop, suche schnell und sieh auf einen Blick, wann du zuletzt etwas geändert hast.',
       features: ['Offline, ohne Konto', 'Drag & Drop zum Sortieren', 'Suche und Sortierung', 'Zeitstempel', 'Hell und dunkel'],

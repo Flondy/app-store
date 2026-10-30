@@ -184,6 +184,16 @@ window.FLONDY = {
       privacy: 'https://marcel-2025.github.io/Winter-Arcade-Landingpage/app-datenschutz.html'
     },
     {
+      id: 'spukwerkstatt', name: 'Spukwerkstatt', full: 'Spukwerkstatt – Fünf Halloween-Spiele',
+      type: 'game', category: 'Arcade', status: 'dev', color: '#7a3fd0',
+      icon: 'https://marcel-2025.github.io/Spukwerkstatt-Landingpage/assets/images/store-icon.webp',
+      tagline: 'Fünf Spiele. Eine magische Werkstatt.',
+      about: 'Zaubern, zerstören, Geister fangen, Rätsel knacken und 90 Sekunden Chaos überleben: Witchstorm Lite, Smash O\'Lantern, Ghost Wrangler, Crypt Shuffle und Reaper\'s Deadline in einer Halloween-Welt. Entsteht mit Unity für Android und iPhone.',
+      features: ['Fünf Halloween-Spielmodi', 'Elemente-Zauber und Fusionen', 'Kürbis-Physik und Gruft-Rätsel', '90-Sekunden-Challenges mit Zufallsregeln', 'Für Android und iPhone geplant'],
+      landing: 'https://marcel-2025.github.io/Spukwerkstatt-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Spukwerkstatt-Landingpage/datenschutz.html'
+    },
+    {
       id: 'screenshot-sorting-pro', name: 'Screenshot Sorting Pro', full: 'Screenshot Sorting Pro',
       type: 'app', category: 'Tools', status: 'dev', color: '#4f7dff',
       tagline: 'Screenshots automatisch in Ordner sortieren.',

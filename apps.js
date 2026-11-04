@@ -137,12 +137,14 @@ window.FLONDY = {
       updated: '2026-09-27'
     },
     {
-      id: 'lumina-ai', name: 'Lumina AI', full: 'Lumina AI',
-      type: 'app', category: 'KI · Foto & Video', status: 'dev', color: '#c56bff',
+      id: 'lumina-ai', name: 'Lumina AI', full: 'Lumina Studio AI',
+      type: 'app', category: 'KI · Foto & Video', status: 'live', color: '#c56bff',
       tagline: 'Your imagination, illuminated. KI-Fotobearbeitung und Videos in einem Studio.',
-      about: 'Lumina AI vereint kreative Fotobearbeitung und KI-Videogenerierung in einem Studio: Fotos per Texteingabe bearbeiten, Bilder in bewegte Szenen verwandeln und den eigenen Look mit Filtern, Formaten und App-Icons gestalten. Die App ist in Entwicklung; die Website zeigt eine Vorschau.',
-      features: ['AI Photo Studio: Fotos per Texteingabe bearbeiten', 'Image to Motion: aus Bildern werden Videos', 'Filter, Seitenverhältnisse und Ausgabeoptionen', 'Eigene App-Icons, Light- und Dark-Ansicht', 'Deutsch und Englisch'],
+      about: 'Lumina AI vereint kreative Fotobearbeitung und KI-Videogenerierung in einem Studio: Fotos per Texteingabe bearbeiten, Bilder in bewegte Szenen verwandeln und Looks im Creative Studio kombinieren. Jeden Tag gibt es kostenlose Bilder; Credit-Pakete, Lumina Pro und Pro Lifetime sind als In-App-Käufe erhältlich.',
+      features: ['Bilder und Videos aus Text erzeugen', 'Fotos mit KI bearbeiten und neu gestalten', 'Creative Studio: Outfits, Filter, Hintergründe, Licht und Posen', 'Kostenlose lokale Filter mit Vorher-nachher-Ansicht', 'Kostenlose Bilder jeden Tag, Standard und HQ bis 2K'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.lumina',
       landing: 'https://marcel-2025.github.io/Lumina-Studio-AI/',
+      updated: '2026-10-26',
       privacy: 'https://marcel-2025.github.io/Lumina-Studio-AI/app-datenschutz.html'
     },
     {

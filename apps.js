@@ -107,7 +107,8 @@ window.FLONDY = {
       about: 'Offline, ohne Konto und ohne Cloud. Sortiere Notizen per Drag & Drop, suche schnell und sieh auf einen Blick, wann du zuletzt etwas geändert hast.',
       features: ['Offline, ohne Konto', 'Drag & Drop zum Sortieren', 'Suche und Sortierung', 'Zeitstempel', 'Hell und dunkel'],
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.mynotes',
-      landing: 'https://flondy.github.io/my-notes-landing-page/',
+      landing: 'https://marcel-2025.github.io/My-Notes-Premium/',
+      privacy: 'https://marcel-2025.github.io/My-Notes-Premium/datenschutz.html',
       updated: '2026-01-17'
     },
     {

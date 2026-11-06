@@ -82,6 +82,7 @@ window.FLONDY = {
     {
       id: 'wembi', name: 'Wembi', full: 'Wembi der kleine Vogel',
       type: 'game', category: 'Casual', status: 'live', color: '#22d3ee',
+      icon: 'https://marcel-2025.github.io/flondy-icons/wembi.webp',
       tagline: 'Hilf Wembi zu überleben und überbiete deine Freunde.',
       about: 'Ein schnelles One-Tap-Spiel für zwischendurch. Leicht zu lernen, schwer zu meistern, und es wird mit jeder Sekunde schwieriger.',
       features: ['Schnelles Gameplay für kurze Runden', 'Schwierigkeit steigt mit der Zeit', 'Highscores gegen Freunde', 'Leicht zu lernen, schwer zu meistern'],
@@ -114,6 +115,7 @@ window.FLONDY = {
     {
       id: 'medtracker-pro', name: 'MedTracker Pro', full: 'MedTracker Pro',
       type: 'app', category: 'Gesundheit', status: 'live', color: '#22b8a5', featured: true,
+      icon: 'https://marcel-2025.github.io/MedTracker-Pro/img/store-icon.webp',
       tagline: 'Medikamenteneinnahme im Blick, Tag für Tag.',
       about: 'Hake deine Einnahmen täglich ab und sieh im Kalender, was genommen wurde und was nicht. Vergangene Zeiträume kannst du nachtragen.',
       features: ['Kalender: genommen, verpasst, offen', 'Medikamentenliste mit Vorschlägen', 'Tägliches Abhaken', 'Zeiträume nachtragen'],

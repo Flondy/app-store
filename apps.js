@@ -1,5 +1,5 @@
 /* Flondy – gemeinsame App-Daten für Flondy Store und Flondy.Dev
-   Stand: 21.10.2026 · Quelle: Google-Play-Entwicklerprofil, App-Store-Einträge, Projektordner.
+   Stand: 13.11.2026 · Quelle: Google-Play-Entwicklerprofil, App-Store-Einträge, Projektordner.
    Nur bestätigte Store-Links eintragen. Neue App = neuer Eintrag in dieser Liste. */
 window.FLONDY = {
   dev: {
@@ -15,11 +15,12 @@ window.FLONDY = {
       { id: 'tiktok', label: 'TikTok Wembi', handle: '@flondy.wembi', url: 'https://www.tiktok.com/@flondy.wembi' },
       { id: 'youtube', label: 'YouTube', handle: '@Flondy-dev', url: 'https://www.youtube.com/@Flondy-dev' },
       { id: 'facebook', label: 'Facebook', handle: 'Flondy Dev.', url: 'https://www.facebook.com/profile.php?id=61584586866428' },
-      { id: 'x', label: 'X', handle: '@Flondy_Dev', url: 'https://x.com/Flondy_Dev' },
       { id: 'linkedin', label: 'LinkedIn', handle: 'Flondy Development', url: 'https://www.linkedin.com/in/flondy-development-567035396/' },
       { id: 'patreon', label: 'Patreon', handle: 'Flondy', url: 'https://www.patreon.com/cw/Flondy' },
       { id: 'github', label: 'GitHub', handle: 'Flondy', url: 'https://github.com/Flondy' },
-      { id: 'linktree', label: 'Linktree', handle: 'linktr.ee/Flondy', url: 'https://linktr.ee/Flondy' }
+      { id: 'telegram', label: 'Telegram', handle: '@Flondy', url: 'https://t.me/Flondy' },
+      { id: 'paypal', label: 'PayPal', handle: 'Spenden', url: 'https://www.paypal.com/paypalme/MSingle72' },
+      { id: 'linktree', label: 'Linktree', handle: 'linktr.ee/flondy', url: 'https://linktr.ee/flondy' }
     ]
   },
   // type: game | app | web   ·   status: live | web | dev
@@ -151,11 +152,12 @@ window.FLONDY = {
       privacy: 'https://marcel-2025.github.io/Lumina-Studio-AI/app-datenschutz.html'
     },
     {
-      id: 'lingo', name: 'Lingo', full: 'Lingo – Sprachen lernen',
-      type: 'web', category: 'Lernen', status: 'web', color: '#f0a63c',
-      tagline: 'Sprachübungen zum Ausprobieren im Browser.',
-      about: 'Probier die interaktive Sprachübung direkt im Browser aus. Die neue Android-App ist in Arbeit.',
-      features: ['Interaktive Übungen im Browser', 'Ohne Installation'],
+      id: 'lingo', name: 'Lingo Pro', full: 'Lingo Pro – Sprachen lernen',
+      type: 'app', category: 'Lernen', status: 'live', color: '#f0a63c',
+      tagline: 'Sprachen lernen in kurzen Lektionen.',
+      about: 'Lingo Pro ist jetzt für Android bei Google Play. Eine Sprachübung zum Ausprobieren gibt es weiterhin im Browser.',
+      features: ['Kurze Lektionen und Quiz', 'Lernpfad mit Ergebnissen', 'Zusätzlich: Übung im Browser'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.lingo.pro',
       web: 'https://lingo-basic.vercel.app/',
       landing: 'https://marcel-2025.github.io/Lingo-Pro/',
       privacy: 'https://flondy.github.io/Lingo-Pro-privacy/'
@@ -170,11 +172,12 @@ window.FLONDY = {
     },
     {
       id: 'live-wallpapers', name: 'Live Wallpapers', full: 'Live Wallpapers – ArtIsFantasy',
-      type: 'app', category: 'Personalisierung', status: 'dev', color: '#7b5bd6',
+      type: 'app', category: 'Personalisierung', status: 'live', color: '#7b5bd6',
       icon: 'https://marcel-2025.github.io/Live-Wallpapers/assets/store-icon.webp',
       tagline: 'Ein bisschen Magie. Für deinen Bildschirm.',
-      about: 'Fantasy-Kunst und animierte Live-Wallpaper von ArtIsFantasy: Schlösser, Wälder und Lichtwelten in Kollektionen, die sich mit den Jahreszeiten verändern. Die App erscheint bald bei Google Play.',
+      about: 'Fantasy-Kunst und animierte Live-Wallpaper von ArtIsFantasy: Schlösser, Wälder und Lichtwelten in Kollektionen, die sich mit den Jahreszeiten verändern.',
       features: ['Fantasy-Motive in thematischen Kollektionen', 'Animierte Live-Wallpaper für Android', 'Saisonale Designs von Halloween bis Weihnachten', 'Favoriten und Bibliothek', 'Premium-Kollektionen per Credits'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.wallpapers',
       landing: 'https://marcel-2025.github.io/Live-Wallpapers/',
       privacy: 'https://marcel-2025.github.io/Live-Wallpapers/datenschutz.html'
     },
@@ -200,11 +203,36 @@ window.FLONDY = {
     },
     {
       id: 'screenshot-sorting-pro', name: 'Screenshot Sorting Pro', full: 'Screenshot Sorting Pro',
-      type: 'app', category: 'Tools', status: 'dev', color: '#4f7dff',
+      type: 'app', category: 'Tools', status: 'live', color: '#4f7dff',
       tagline: 'Screenshots automatisch in Ordner sortieren.',
-      about: 'Screenshot Sorting Pro sortiert deine Screenshots automatisch. Die App ist im Test und noch nicht im Store.',
-      features: ['Automatisch sortieren', 'In Entwicklung'],
+      about: 'Screenshot Sorting Pro sortiert deine Screenshots automatisch in Ordner, auf dem Handy und auf dem Tablet.',
+      features: ['Automatisch sortieren', 'Handy und Tablet'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.screenshotsortingpro',
       landing: 'https://marcel-2025.github.io/Screenshot-Sorting-Pro-landing-page/'
+    },
+    {
+      id: 'russisch', name: 'Russisch täglich', full: 'Russisch täglich – Russisch lernen',
+      type: 'app', category: 'Lernen', status: 'live', color: '#0d1f86',
+      icon: 'https://marcel-2025.github.io/Wortreise-Sprachatlas/assets/premium-icon.png',
+      tagline: 'Ein Gespräch am Tag. Russisch im Alltag verstehen.',
+      about: '40 Lektionen von Café bis Arzt: Dialoge hören, Wörter mit Bildkarten lernen und nach Plan wiederholen. Ohne Konto, auch offline. Die Lektionen 1 bis 5 sind kostenlos. Die App ist auf Deutsch.',
+      features: ['40 Lektionen aus dem Alltag', 'Hören, Verstehen, Mitlesen', 'Wörter mit Bildkarten', 'Wiederholen nach Plan', 'Ohne Konto, auch offline'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.russisch',
+      landing: 'https://marcel-2025.github.io/Wortreise-Sprachatlas/',
+      privacy: 'https://marcel-2025.github.io/Wortreise-Sprachatlas/datenschutz.html',
+      updated: '2026-11-12'
+    },
+    {
+      id: 'pumpkin-hollow', name: 'Pumpkin Hollow', full: 'Pumpkin Hollow – Herbstabenteuer',
+      type: 'game', category: 'Abenteuer', status: 'live', color: '#f07a1e',
+      icon: 'https://marcel-2025.github.io/Pumpkin-Hollow-Landingpage/assets/icon.webp',
+      tagline: 'Wo die Blätter fallen, beginnt die Magie.',
+      about: 'Ein gemütliches Herbstabenteuer mit Hexenkessel, Kürbisfahrt und Nachtwache. Mit jedem Abenteuer wächst dein eigener Kürbishof.',
+      features: ['Mehrere Herbst-Abenteuer in einer Welt', 'Hexenkessel, Kürbisfahrt, Nachtwache', 'Eigener Hof, der mitwächst'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.pumpkinhollow',
+      landing: 'https://marcel-2025.github.io/Pumpkin-Hollow-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Pumpkin-Hollow-Landingpage/privacy.html',
+      updated: '2026-11-11'
     }
   ]
 };

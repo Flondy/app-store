@@ -1,5 +1,5 @@
 /* Flondy – gemeinsame App-Daten für Flondy Store und Flondy.Dev
-   Stand: 13.11.2026 · Quelle: Google-Play-Entwicklerprofil, App-Store-Einträge, Projektordner.
+   Stand: 20.11.2026 · Quelle: Google-Play-Entwicklerprofil, App-Store-Einträge, Projektordner.
    Nur bestätigte Store-Links eintragen. Neue App = neuer Eintrag in dieser Liste. */
 window.FLONDY = {
   dev: {
@@ -233,6 +233,66 @@ window.FLONDY = {
       landing: 'https://marcel-2025.github.io/Pumpkin-Hollow-Landingpage/',
       privacy: 'https://marcel-2025.github.io/Pumpkin-Hollow-Landingpage/privacy.html',
       updated: '2026-11-11'
+    },
+    {
+      id: 'alltags-kompass', name: 'Alltags Kompass', full: 'Alltags Kompass – Alltagsplaner',
+      type: 'app', category: 'Effizienz', status: 'live', color: '#3b5fd0',
+      icon: 'https://marcel-2025.github.io/flondy-icons/alltags-kompass.webp',
+      tagline: 'Mehr Überblick. Mehr du.',
+      about: 'Budget, Abos, Einkauf, Kochen und die Woche planen – an einem Ort, in deinem Tempo. Offline, ohne Konto und ohne Werbung.',
+      features: ['Heute auf einen Blick', 'Monatsbudget, Fixkosten und Abos', 'Einkaufsliste aus dem Essensplan', 'Einfacher Modus mit drei großen Aktionen', 'Offline, ohne Konto'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.alltagskompass',
+      landing: 'https://marcel-2025.github.io/Alltags-Kompass-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Alltags-Kompass-Landingpage/datenschutz.html',
+      updated: '2026-11-13'
+    },
+    {
+      id: 'sound-wave', name: 'Sound Wave', full: 'Sound Wave – Music Player',
+      type: 'app', category: 'Musik', status: 'live', color: '#3b6bff',
+      icon: 'https://marcel-2025.github.io/flondy-icons/sound-wave.webp',
+      tagline: 'Dein Offline-Musikplayer.',
+      about: 'Der Musikplayer für deine eigene Musiksammlung: eigene Songs, Playlists und Mixe für jede Stimmung – komplett offline, ohne Konto.',
+      features: ['Eigene Musik vom Gerät importieren', 'Playlists, Favoriten und Mixe', 'Warteschlange und Sleep-Timer', 'Wiedergabe im Hintergrund', 'Neon-Design in Dunkel und Hell'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.SW',
+      landing: 'https://marcel-2025.github.io/Sound-Wave-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Sound-Wave-Landingpage/datenschutz.html',
+      updated: '2026-11-17'
+    },
+    {
+      id: 'gx-launcher', name: 'GX Launcher', full: 'GX Launcher – Spielebibliothek',
+      type: 'app', category: 'Tools', status: 'live', color: '#d8344f',
+      icon: 'https://marcel-2025.github.io/flondy-icons/gx-launcher.webp',
+      tagline: 'Deine Sammlung. Dein Universum.',
+      about: 'Deine eigene Spielesammlung auf einem Bildschirm – mit Coverflow im Stil klassischer Konsolen-Menüs, Themes und Emulator-Start.',
+      features: ['Coverflow, Karussell, Regal und Raster', 'Spiele werden automatisch erkannt', 'Cover offline gespeichert', '22 Designs und 11 App-Icons', 'Steuerung per Controller'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.gxlauncher',
+      landing: 'https://marcel-2025.github.io/GX-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/GX-Landingpage/datenschutz.html',
+      updated: '2026-11-15'
+    },
+    {
+      id: 'dayora', name: 'Licht Rhythmus', full: 'Licht Rhythmus – Licht & Schlaf (Dayora)',
+      type: 'app', category: 'Gesundheit', status: 'live', color: '#d39a4e',
+      icon: 'https://marcel-2025.github.io/flondy-icons/dayora.webp',
+      tagline: 'Finde deinen Rhythmus. Nutze dein Tageslicht.',
+      about: 'Sonnenzeiten, Tageslicht-Simulator und Schlafprotokoll – damit du deinen Rhythmus ohne Druck verstehst. Offline, ohne Konto. Ersetzt keine ärztliche Beratung.',
+      features: ['Sonnenaufgang, Tageslänge, Dämmerung', 'Interaktiver Sonnenverlauf', 'Jahreskarte des Tageslichts', 'Schlafprotokoll ohne Bewertung', 'Rhythmus-Planer in kleinen Schritten'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.dayora',
+      landing: 'https://marcel-2025.github.io/Dayora-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Dayora-Landingpage/datenschutz.html',
+      updated: '2026-11-14'
+    },
+    {
+      id: 'geburtstage', name: 'Geburtstage', full: 'Geburtstage: Kalender & Timer',
+      type: 'app', category: 'Tools', status: 'live', color: '#7b5bff',
+      icon: 'https://marcel-2025.github.io/flondy-icons/geburtstage.webp',
+      tagline: 'Nie wieder einen Geburtstag vergessen.',
+      about: 'Geburtstage, Jahrestage und eigene Anlässe mit Erinnerungen, Countdown und Glückwunsch-Vorlagen. Ohne Werbung, ohne Konto, komplett offline.',
+      features: ['Import aus Kontakten und Kalender', 'Erinnerungen am Tag oder vorher', '40 Feiertage mit Live-Countdown', 'Glückwunsch-Vorlagen zum Teilen', 'Zwei Widgets, 10 Skins'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.geburtstage',
+      landing: 'https://marcel-2025.github.io/Geburtstage/',
+      privacy: 'https://marcel-2025.github.io/Geburtstage/datenschutz.html',
+      updated: '2026-11-18'
     }
   ]
 };

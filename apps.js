@@ -293,6 +293,46 @@ window.FLONDY = {
       landing: 'https://marcel-2025.github.io/Geburtstage/',
       privacy: 'https://marcel-2025.github.io/Geburtstage/datenschutz.html',
       updated: '2026-11-18'
+    },
+    {
+      id: 'hexora', name: 'Hexora', full: 'Hexora – Reverse Engineering lernen',
+      type: 'app', category: 'Lernen', status: 'dev', color: '#3ee08f',
+      icon: 'https://marcel-2025.github.io/Hexora/assets/icon.png',
+      tagline: 'Reverse Engineering verstehen.',
+      about: 'Lies deinen ersten Hex-Dump, erkenne Dateiformate und entdecke, wie Android-Apps aufgebaut sind – Schritt für Schritt mit echten Werkzeugen. Die Android-Version ist in Vorbereitung.',
+      features: ['36 Lektionen', '16 Werkzeuge, darunter ein lokaler Hex-Viewer', '20 Rätsel im CTF-Stil', 'Grundkurs kostenlos'],
+      landing: 'https://marcel-2025.github.io/Hexora/',
+      privacy: 'https://marcel-2025.github.io/Hexora/datenschutz.html'
+    },
+    {
+      id: 'riff', name: 'Riff', full: 'Riff – Musik lernen',
+      type: 'app', category: 'Lernen', status: 'dev', color: '#ff7a2f',
+      icon: 'https://marcel-2025.github.io/Riff/media/icon.webp',
+      tagline: 'Du spielst. Riff hört zu.',
+      about: 'Spiele Songs auf Gitarre, Bass, Klavier oder Ukulele. Riff zeigt dir beim Spielen, ob du den richtigen Ton zur richtigen Zeit triffst. In Entwicklung für Windows und Android.',
+      features: ['4 Instrumente', '29 Songs und Übungen', '22 Lektionen', '5 Arcade-Spiele', 'Stimmgerät und Metronom'],
+      landing: 'https://marcel-2025.github.io/Riff/',
+      privacy: 'https://marcel-2025.github.io/Riff/datenschutz.html'
+    },
+    {
+      id: 'snap-chronik', name: 'Snap Chronik', full: 'Snap Chronik – Deine Fotos als Zeitreise',
+      type: 'app', category: 'Foto', status: 'dev', color: '#f5e400',
+      icon: 'https://marcel-2025.github.io/Snap-Chronik/assets/icon.png',
+      tagline: 'Deine Fotos als Zeitreise.',
+      about: 'Blättere durch deine Fotos, Videos und Snapchat-Memories – Tag für Tag, direkt auf deinem Gerät. Für Android und Windows.',
+      features: ['Fotokalender und Feed', '„Damals & heute“-Rückblicke', 'Tablet als Bilderrahmen', 'Duplikate finden und Daten korrigieren'],
+      landing: 'https://marcel-2025.github.io/Snap-Chronik/',
+      privacy: 'https://marcel-2025.github.io/Snap-Chronik/datenschutz.html'
+    },
+    {
+      id: 'velvet-hearts', name: 'Velvet Hearts', full: 'Velvet Hearts – Relationship & Adventure',
+      type: 'game', category: 'Simulation', status: 'dev', color: '#e9a3b8',
+      icon: 'https://marcel-2025.github.io/Velvet-Hearts/assets/logo.svg',
+      tagline: 'Dein Leben. Deine Geschichte.',
+      about: 'Liebe, Reisen, Fashion und Luxus: Gestalte dein Zuhause, lerne fiktive Charaktere kennen und entdecke 220 Reiseziele. Für Erwachsene, in Entwicklung für PC und Android.',
+      features: ['Beziehungen und Storys', 'Fashion und Garderobe', '220 Reiseziele', '76 Immobilien zum Einrichten', 'Offline spielbar'],
+      landing: 'https://marcel-2025.github.io/Velvet-Hearts/',
+      privacy: 'https://marcel-2025.github.io/Velvet-Hearts/datenschutz.html'
     }
   ]
 };

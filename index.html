@@ -18,9 +18,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
-try{var t=localStorage.getItem('flondy-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}
+try{var t=localStorage.getItem('flondy-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;var k=localStorage.getItem('flondy-skin');if(k&&k!=='neon')document.documentElement.dataset.skin=k;}catch(e){}
 </script>
 <style>
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
 :root{
   --paper:#f2f5f1; --surface:#ffffff; --sunk:#e6ebe4; --ink:#131a12; --soft:#5a6658; --line:#d6ddd3;
   --brand:#14a83a; --brand-ink:#0b7a27; --on-brand:#ffffff;
@@ -66,6 +67,10 @@ button{font:inherit;color:inherit}
 .search svg{position:absolute;left:15px;top:50%;translate:0 -50%;width:18px;height:18px;color:var(--soft)}
 .theme{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;flex-shrink:0}
 .theme svg{width:20px;height:20px}
+.tools{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.lang{font:800 13px var(--body);color:var(--ink)}
+#skin svg{color:var(--brand)}
+#event{padding-top:14px}
 
 /* tabs */
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:18px 0 4px;scrollbar-width:none}
@@ -81,6 +86,17 @@ button{font:inherit;color:inherit}
 .feat{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px) / 3);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 22px;scrollbar-width:thin}
 .fcard{scroll-snap-align:start;position:relative;border-radius:var(--r-xl);overflow:hidden;min-height:340px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;isolation:isolate;cursor:pointer;border:0;text-align:left;
   background:radial-gradient(120% 90% at 85% 10%,color-mix(in srgb,var(--c) 85%,#fff 15%) 0%,var(--c) 38%,color-mix(in srgb,var(--c) 30%,#000 70%) 100%)}
+.fcard::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:3px;background:conic-gradient(from var(--ang),var(--g1),var(--g2),var(--g3),var(--g4),var(--g1));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;opacity:.9;pointer-events:none;z-index:2}
+.fcard{animation:fpulse 3s ease-in-out infinite}
+.fcard:nth-child(2){animation-delay:-1s}.fcard:nth-child(3){animation-delay:-2s}
+@keyframes spin{to{--ang:360deg}}
+@keyframes fpulse{0%,100%{box-shadow:0 10px 30px -18px var(--c)}50%{box-shadow:0 14px 44px -8px var(--c)}}
+.featwrap{position:relative}
+.fnav{position:absolute;top:calc(50% - 36px);z-index:3;width:50px;height:50px;border-radius:50%;border:2px solid var(--brand);background:color-mix(in srgb,var(--paper) 75%,transparent);color:var(--brand-ink);display:grid;place-items:center;cursor:pointer;animation:glow 2.2s ease-in-out infinite;backdrop-filter:blur(6px)}
+.fnav svg{width:22px;height:22px}
+.fnav:hover{background:var(--brand);color:var(--on-brand)}
+.fnav[hidden]{display:none}.fnav.prev{left:-14px}.fnav.next{right:-14px}
+@keyframes glow{0%,100%{box-shadow:0 0 10px -2px var(--brand)}50%{box-shadow:0 0 26px 2px var(--brand)}}
 .fcard .big{position:absolute;right:-30px;top:30px;width:230px;height:230px;border-radius:52px;rotate:-10deg;box-shadow:0 30px 60px -20px rgb(0 0 0 / .55);z-index:-1;transition:rotate .5s cubic-bezier(.2,.8,.2,1),translate .5s cubic-bezier(.2,.8,.2,1)}
 .fcard:hover .big,.fcard:focus-visible .big{rotate:-4deg;translate:-8px -6px}
 .fcard .kick{font:600 14px var(--body);opacity:.9;display:flex;gap:8px;align-items:center}
@@ -90,6 +106,23 @@ button{font:inherit;color:inherit}
 .fcard .plats{display:flex;gap:8px;flex-wrap:wrap}
 .chip{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--body);padding:6px 11px;border-radius:999px;background:rgb(0 0 0 / .28);color:#fff}
 .chip svg{width:14px;height:14px}
+
+/* support */
+.support{margin:40px 0 0;border-radius:var(--r-xl);padding:30px;background:var(--surface);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;overflow:hidden;isolation:isolate}
+.support::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:conic-gradient(from var(--ang),var(--g1),var(--g2),var(--g3),var(--g4),var(--g1));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 8s linear infinite;pointer-events:none}
+.support h2{margin:0 0 6px;font:800 28px/1.1 var(--display);letter-spacing:-.025em}
+.support p{margin:0;color:var(--soft);max-width:56ch}
+.support .cta{margin:0}
+.view{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex-shrink:0}
+.view button{border:0;background:transparent;padding:7px 12px;cursor:pointer;color:var(--soft);font-weight:700;font-size:13px}
+.view button[aria-pressed="true"]{background:var(--sunk);color:var(--ink)}
+.tabbar{display:flex;align-items:center;gap:12px}
+.tabbar .tabs{flex:1;min-width:0}
+.rows.tiles{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.rows.tiles .row{grid-template-columns:1fr;justify-items:center;text-align:center;border:1px solid var(--line);border-radius:var(--r-l);padding:16px 12px;background:var(--surface);transition:transform .25s,box-shadow .25s}
+.rows.tiles .row:hover{transform:translateY(-3px);box-shadow:0 0 0 2px var(--brand),0 10px 30px -12px var(--brand)}
+.rows.tiles .row img{width:84px;height:84px;border-radius:20px}
+.rows.tiles .row .meta{justify-content:center}
 
 /* shelves */
 .shelf{padding:26px 0 8px;border-top:1px solid var(--line);margin-top:10px}
@@ -157,9 +190,11 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
 @media (max-width:760px){
   .top-in{height:auto;padding:12px 0;flex-wrap:wrap}
   .search{order:3;flex-basis:100%;max-width:none}
-  .theme{margin-left:auto}
+  .tools{margin-left:auto}
   .rows{grid-template-columns:1fr}
   .band{grid-template-columns:1fr}
+  .support{grid-template-columns:1fr;padding:24px}
+  .fnav{display:none}
   .band a{border-right:0;border-bottom:1px solid var(--line)}
   .feat{grid-auto-columns:86%}
   .shelf-h{flex-direction:column;gap:2px}
@@ -178,42 +213,60 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
   <div class="wrap top-in">
     <a class="brand" href="./" aria-label="Flondy Store Startseite">
       <img src="icons/flondy-logo.webp" alt="" width="38" height="38">
-      <span><b>Flondy Store</b><small>Apps & Games von Flondy Dev.</small></span>
+      <span><b>Flondy Store</b><small data-i18n="brandSub">Apps & Games von Flondy Dev.</small></span>
     </a>
     <label class="search">
-      <span class="sr">Apps durchsuchen</span>
+      <span class="sr" data-i18n="searchLbl">Apps durchsuchen</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Apps und Spiele durchsuchen" autocomplete="off">
+      <input id="q" type="search" placeholder="Apps und Spiele durchsuchen" data-i18n-ph="searchPh" autocomplete="off">
     </label>
-    <button class="theme" id="theme" type="button" aria-label="Hell oder dunkel">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
-    </button>
+    <div class="tools">
+      <button class="theme" id="skin" type="button" aria-label="Design wählen" data-i18n-aria="skin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.6-.9 1.6-1.7 0-1.4-1.2-1.6-1.2-2.8 0-.9.7-1.5 1.6-1.5H16a5 5 0 0 0 5-5c0-3.9-4-7-9-7z"/><circle cx="7.5" cy="11" r="1.3" fill="currentColor"/><circle cx="10.5" cy="7" r="1.3" fill="currentColor"/><circle cx="15" cy="7.5" r="1.3" fill="currentColor"/></svg></button>
+      <button class="theme lang" id="lang" type="button">EN</button>
+      <button class="theme" id="theme" type="button" aria-label="Hell oder dunkel" data-i18n-aria="mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
+<div class="wrap" id="event" hidden></div>
 <main class="wrap">
-  <nav class="tabs" aria-label="Kategorien" id="tabs"></nav>
+  <div class="tabbar"><nav class="tabs" aria-label="Kategorien" id="tabs"></nav>
+    <div class="view" role="group" aria-label="Ansicht"><button type="button" data-view="list" data-i18n="vList">Liste</button><button type="button" data-view="tiles" data-i18n="vTiles">Kacheln</button></div></div>
 
   <section id="today" aria-labelledby="t-today">
     <div class="intro">
-      <h1 id="t-today">Jetzt auch auf dem iPhone.</h1>
-      <p>Check your Love, App Vault, Drop It, MedTracker Pro und EMA Mind gibt es jetzt bei Google Play und im App Store.</p>
+      <h1 id="t-today" data-i18n="todayH">Jetzt auch auf dem iPhone.</h1>
+      <p data-i18n="todayP">Check your Love, App Vault, Drop It, MedTracker Pro und EMA Mind gibt es jetzt bei Google Play und im App Store.</p>
     </div>
-    <div class="feat" id="feat"></div>
+    <div class="featwrap">
+      <button class="fnav prev" type="button" id="fprev" aria-label="Zurück" data-i18n-aria="prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      <div class="feat" id="feat"></div>
+      <button class="fnav next" type="button" id="fnext" aria-label="Weiter" data-i18n-aria="next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    </div>
   </section>
 
   <div id="shelves"></div>
 
   <section class="band" aria-label="Flondy auf allen Plattformen">
-    <a href="https://play.google.com/store/apps/dev?id=6892475632884505831" target="_blank" rel="noopener"><strong id="n-play">10</strong><h3>Apps bei Google Play</h3><p>Zum Entwicklerprofil Flondy Dev.</p></a>
-    <a href="https://apps.apple.com/de/developer/marcel-single/id6823302676" target="_blank" rel="noopener"><strong id="n-ios">5</strong><h3>Apps fürs iPhone</h3><p>Zum Entwicklerprofil im App Store</p></a>
-    <a href="#" data-tab="web"><strong id="n-web">3</strong><h3>Apps im Browser</h3><p>Ohne Installation ausprobieren</p></a>
+    <a href="https://play.google.com/store/apps/dev?id=6892475632884505831" target="_blank" rel="noopener"><strong id="n-play">10</strong><h3 data-i18n="bPlay">Apps bei Google Play</h3><p data-i18n="bPlayP">Zum Entwicklerprofil Flondy Dev.</p></a>
+    <a href="https://apps.apple.com/de/developer/marcel-single/id6823302676" target="_blank" rel="noopener"><strong id="n-ios">5</strong><h3 data-i18n="bIos">Apps fürs iPhone</h3><p data-i18n="bIosP">Zum Entwicklerprofil im App Store</p></a>
+    <a href="#" data-tab="web"><strong id="n-web">3</strong><h3 data-i18n="bWeb">Apps im Browser</h3><p data-i18n="bWebP">Ohne Installation ausprobieren</p></a>
+  </section>
+
+  <section class="support" id="unterstuetzen" aria-labelledby="h-sup">
+    <div><h2 id="h-sup" data-i18n="supH">Entwickler unterstützen</h2><p data-i18n="supP">Flondy Dev. ist eine Person. Alle Apps entstehen in der Freizeit. Ein Danke-Kaffee hilft, dass es weitergeht – in den Apps selbst geht das über den jeweiligen Store.</p></div>
+    <div class="cta">
+      <a class="btn brand" href="https://www.paypal.com/paypalme/MSingle72" target="_blank" rel="noopener">☕ <span data-i18n="supPay">Danke-Kaffee (PayPal)</span></a>
+      <a class="btn ghost" href="https://www.patreon.com/cw/Flondy" target="_blank" rel="noopener">Patreon</a>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <span>© 2019–2026 Flondy Dev. · Kontakt: <a href="mailto:flondy.dev@gmail.com">flondy.dev@gmail.com</a></span>
+    <span>© 2019–2026 Flondy Dev. · <span data-i18n="contact">Kontakt</span>: <a href="mailto:flondy.dev@gmail.com">flondy.dev@gmail.com</a></span>
     <nav aria-label="Weitere Links">
       <a href="https://flondy.github.io/Flondy.Dev/">Flondy.Dev</a>
       <a href="https://play.google.com/store/apps/dev?id=6892475632884505831" target="_blank" rel="noopener">Google Play</a>
@@ -221,14 +274,14 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
       <a href="https://linktr.ee/flondy" target="_blank" rel="noopener">Linktree</a>
       <a href="https://t.me/Flondy" target="_blank" rel="noopener">Telegram</a>
       <a href="https://www.patreon.com/cw/Flondy" target="_blank" rel="noopener">Patreon</a>
-      <a href="https://www.paypal.com/paypalme/MSingle72" target="_blank" rel="noopener">Spenden (PayPal)</a>
-      <a href="https://flondydev.wixsite.com/flondy/downloads" target="_blank" rel="noopener">Downloads (Wix)</a>
+      <a href="https://www.paypal.com/paypalme/MSingle72" target="_blank" rel="noopener" data-i18n="fDonate">Spenden (PayPal)</a>
+      <a href="https://flondydev.wixsite.com/flondy/downloads" target="_blank" rel="noopener" data-i18n="fDl">Downloads (Wix)</a>
       <a href="https://www.instagram.com/flondy.dev" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@flondy.dev" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.youtube.com/@Flondy-dev" target="_blank" rel="noopener">YouTube</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="https://marcel-2025.github.io/nutzungsbedingungen.html" target="_blank" rel="noopener">Nutzungsbedingungen</a>
-      <a href="https://marcel-2025.github.io/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+      <a href="impressum.html" data-i18n="fImp">Impressum</a>
+      <a href="https://marcel-2025.github.io/nutzungsbedingungen.html" target="_blank" rel="noopener" data-i18n="fTerms">Nutzungsbedingungen</a>
+      <a href="https://marcel-2025.github.io/datenschutz.html" target="_blank" rel="noopener" data-i18n="fPriv">Datenschutz</a>
       <a href="app-ads.txt">app-ads.txt</a>
     </nav>
   </div>
@@ -237,9 +290,44 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
 <dialog id="sheet" aria-labelledby="d-name"></dialog>
 
 <script src="apps.js"></script>
+<script src="flondy-ui.js"></script>
 <script>
 (() => {
-  const D = window.FLONDY, apps = D.apps;
+  const D = window.FLONDY, apps = D.apps, UI = window.FlondyUI;
+  const L = UI ? UI.lang() : 'de';
+  const T = {
+    de:{skin:'Design wählen',mode:'Hell oder dunkel',brandSub:'Apps & Games von Flondy Dev.',searchLbl:'Apps durchsuchen',searchPh:'Apps und Spiele durchsuchen',
+      todayH:'Jetzt auch auf dem iPhone.',todayP:'Check your Love, App Vault, Drop It, MedTracker Pro und EMA Mind gibt es jetzt bei Google Play und im App Store.',
+      prev:'Zurück',next:'Weiter',vList:'Liste',vTiles:'Kacheln',
+      bPlay:'Apps bei Google Play',bPlayP:'Zum Entwicklerprofil Flondy Dev.',bIos:'Apps fürs iPhone',bIosP:'Zum Entwicklerprofil im App Store',bWeb:'Apps im Browser',bWebP:'Ohne Installation ausprobieren',
+      supH:'Entwickler unterstützen',supP:'Flondy Dev. ist eine Person. Alle Apps entstehen in der Freizeit. Ein Danke-Kaffee hilft, dass es weitergeht – in den Apps selbst geht das über den jeweiligen Store.',supPay:'Danke-Kaffee (PayPal)',
+      contact:'Kontakt',fDonate:'Spenden (PayPal)',fDl:'Downloads (Wix)',fImp:'Impressum',fTerms:'Nutzungsbedingungen',fPriv:'Datenschutz',
+      game:'Spiel',app:'App',web:'Web-App',tDisc:'Entdecken',tGames:'Spiele',tApps:'Apps',tIos:'iPhone',tWeb:'Im Browser',tDev:'Demnächst',
+      sGames:'Kurze Runden, hohe Scores',sApps:'Für Alltag, Ordnung und Gesundheit',sWeb:'Sofort ausprobieren, ohne Installation',sDev:'Im Test, noch nicht im Store',
+      inDev:'In Entwicklung',look:'Ansehen',open:'Öffnen',get:'Laden',details:'Details',results:'Ergebnisse für',found:'gefunden',noHit:'Keine App passt zu',reset:'Suche zurücksetzen',entry:'Eintrag',entries:'Einträge',
+      nowAt:'Jetzt bei',loadIn:'Laden im',noInst:'Ohne Installation',inBrowser:'Im Browser öffnen',allAbout:'Alles über die App',site:'Website ansehen',
+      canGame:'Das kann das Spiel',canApp:'Das kann die App',privacy:'Datenschutz',support:'Support',copy:'Link kopieren',copied:'Link kopiert',close:'Schließen',icon:'App-Icon'},
+    en:{skin:'Choose a design',mode:'Light or dark',brandSub:'Apps & games by Flondy Dev.',searchLbl:'Search apps',searchPh:'Search apps and games',
+      todayH:'Now on iPhone too.',todayP:'Check your Love, App Vault, Drop It, MedTracker Pro and EMA Mind are now on Google Play and the App Store.',
+      prev:'Back',next:'Next',vList:'List',vTiles:'Tiles',
+      bPlay:'apps on Google Play',bPlayP:'Developer page Flondy Dev.',bIos:'apps for iPhone',bIosP:'Developer page on the App Store',bWeb:'apps in the browser',bWebP:'Try without installing',
+      supH:'Support the developer',supP:'Flondy Dev. is one person. All apps are made in spare time. A thank-you coffee helps keep it going – inside the apps this works through the app store.',supPay:'Thank-you coffee (PayPal)',
+      contact:'Contact',fDonate:'Donate (PayPal)',fDl:'Downloads (Wix)',fImp:'Imprint',fTerms:'Terms of use',fPriv:'Privacy',
+      game:'Game',app:'App',web:'Web app',tDisc:'Discover',tGames:'Games',tApps:'Apps',tIos:'iPhone',tWeb:'In the browser',tDev:'Coming soon',
+      sGames:'Quick rounds, high scores',sApps:'For everyday life, order and health',sWeb:'Try right away, no install',sDev:'In testing, not in the store yet',
+      inDev:'In development',look:'View',open:'Open',get:'Get',details:'details',results:'Results for',found:'found',noHit:'No app matches',reset:'Clear search',entry:'entry',entries:'entries',
+      nowAt:'Get it on',loadIn:'Download on the',noInst:'No install',inBrowser:'Open in browser',allAbout:'All about the app',site:'Visit website',
+      canGame:'What the game offers',canApp:'What the app offers',privacy:'Privacy',support:'Support',copy:'Copy link',copied:'Link copied',close:'Close',icon:'app icon'}
+  }[L];
+  const tx = (a, k) => D.t ? D.t(a, k, L) : a[k];
+  const cat = a => L === 'en' && a.en && a.en.category ? a.en.category : a.category;
+  document.documentElement.lang = L;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; if (T[k]) el.textContent = T[k]; });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => { const k = el.dataset.i18nAria; if (T[k]) el.setAttribute('aria-label', T[k]); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { const k = el.dataset.i18nPh; if (T[k]) el.placeholder = T[k]; });
+  const lb = document.getElementById('lang'); lb.textContent = L === 'de' ? 'EN' : 'DE'; lb.setAttribute('aria-label', L === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln');
+  lb.addEventListener('click', () => { const n = L === 'de' ? 'en' : 'de'; if (UI) UI.setLang(n); const u = new URL(location.href); u.searchParams.set('lang', n); location.href = u.toString(); });
+  if (UI) UI.init({primary:'--brand', ink:'--brand-ink', panel:'--surface', fg:'--ink', soft:'--soft', line:'--line', skinButton:'#skin', eventBox:'#event', lang:L});
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const ico = {
@@ -247,23 +335,31 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>',
     web:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>'
   };
-  const typeName = {game:'Spiel', app:'App', web:'Web-App'};
+  const typeName = {game:T.game, app:T.app, web:T.web};
   const iconOf = a => a.icon || `icons/${a.id}.webp`;
   const tabs = [
-    {id:'all', label:'Entdecken'},
-    {id:'game', label:'Spiele', f:a=>a.type==='game'},
-    {id:'app', label:'Apps', f:a=>a.type==='app' && a.status==='live'},
-    {id:'ios', label:'iPhone', f:a=>!!a.ios},
-    {id:'web', label:'Im Browser', f:a=>a.status==='web'},
-    {id:'dev', label:'Demnächst', f:a=>a.status==='dev'}
+    {id:'all', label:T.tDisc},
+    {id:'game', label:T.tGames, f:a=>a.type==='game'},
+    {id:'app', label:T.tApps, f:a=>a.type==='app' && a.status==='live'},
+    {id:'ios', label:T.tIos, f:a=>!!a.ios},
+    {id:'web', label:T.tWeb, f:a=>a.status==='web'},
+    {id:'dev', label:T.tDev, f:a=>a.status==='dev'}
   ];
   const shelves = [
-    {id:'game', title:'Spiele', sub:'Kurze Runden, hohe Scores'},
-    {id:'app', title:'Apps', sub:'Für Alltag, Ordnung und Gesundheit'},
-    {id:'web', title:'Im Browser', sub:'Sofort ausprobieren, ohne Installation'},
-    {id:'dev', title:'Demnächst', sub:'Im Test, noch nicht im Store'}
+    {id:'game', title:T.tGames, sub:T.sGames},
+    {id:'app', title:T.tApps, sub:T.sApps},
+    {id:'web', title:T.tWeb, sub:T.sWeb},
+    {id:'dev', title:T.tDev, sub:T.sDev}
   ];
   let tab = 'all';
+  let view = 'list'; try { view = localStorage.getItem('flondy-store-view') || 'list'; } catch (e) {}
+  function setView(v){ view = v; document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === v))); document.querySelectorAll('#shelves .rows').forEach(r => r.classList.toggle('tiles', v === 'tiles')); try { localStorage.setItem('flondy-store-view', v); } catch (e) {} }
+  document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  const feat = document.getElementById('feat');
+  const fstep = d => { const c = feat.querySelector('.fcard'); if (!c) return; const w = c.offsetWidth + 18, max = feat.scrollWidth - feat.clientWidth;
+    let x = feat.scrollLeft + d * w; if (x > max + 4) x = 0; if (x < -4) x = max; feat.scrollTo({left:x, behavior:'smooth'}); };
+  document.getElementById('fprev').onclick = () => fstep(-1);
+  document.getElementById('fnext').onclick = () => fstep(1);
 
   $('#n-play').textContent = apps.filter(a => a.play).length;
   $('#n-ios').textContent = apps.filter(a => a.ios).length;
@@ -274,13 +370,13 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     if (a.play) t.push('<span class="tag">Android</span>');
     if (a.ios) t.push('<span class="tag ios">iPhone</span>');
     if (a.web) t.push('<span class="tag">Browser</span>');
-    if (a.status === 'dev') t.push('<span class="tag dev">In Entwicklung</span>');
+    if (a.status === 'dev') t.push(`<span class="tag dev">${T.inDev}</span>`);
     return t.join('');
   }
-  const action = a => a.status === 'dev' ? 'Ansehen' : a.status === 'web' ? 'Öffnen' : 'Laden';
-  const row = a => `<button class="row" type="button" data-app="${a.id}" aria-label="${esc(a.full)} – Details">
+  const action = a => a.status === 'dev' ? T.look : a.status === 'web' ? T.open : T.get;
+  const row = a => `<button class="row" type="button" data-app="${a.id}" aria-label="${esc(a.full)} – ${T.details}">
       <img src="${iconOf(a)}" alt="" width="72" height="72" loading="lazy">
-      <span><span class="t">${esc(a.name)}</span><span class="sub">${esc(a.tagline)}</span><span class="meta">${tags(a)}</span></span>
+      <span><span class="t">${esc(a.name)}</span><span class="sub">${esc(tx(a,'tagline'))}</span><span class="meta">${tags(a)}</span></span>
       <span class="get" aria-hidden="true">${action(a)}</span></button>`;
 
   function renderTabs(){
@@ -291,10 +387,10 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
   }
   function renderFeat(){
     $('#feat').innerHTML = apps.filter(a => a.featured).map(a => `
-      <button class="fcard" type="button" data-app="${a.id}" style="--c:${a.color}" aria-label="${esc(a.full)} – Details">
+      <button class="fcard" type="button" data-app="${a.id}" style="--c:${a.color}" aria-label="${esc(a.full)} – ${T.details}">
         <img class="big" src="${iconOf(a)}" alt="" width="230" height="230">
-        <span class="kick"><i>${a.type==='game'?'Spiel':'App'} · ${esc(a.category)}</i></span>
-        <span><span class="h">${esc(a.name)}</span><span class="p">${esc(a.tagline)}</span>
+        <span class="kick"><i>${a.type==='game'?T.game:T.app} · ${esc(cat(a))}</i></span>
+        <span><span class="h">${esc(a.name)}</span><span class="p">${esc(tx(a,'tagline'))}</span>
         <span class="plats"><span class="chip">${ico.play}Google Play</span><span class="chip">${ico.phone}iPhone</span></span></span>
       </button>`).join('');
   }
@@ -304,9 +400,9 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     $('#today').hidden = !showToday;
     let html = '';
     if (q) {
-      const hits = apps.filter(a => [a.name,a.full,a.tagline,a.category,a.about].join(' ').toLowerCase().includes(q));
-      html = `<section class="shelf"><div class="shelf-h"><h2>Ergebnisse für „${esc(q)}“</h2><p>${hits.length} gefunden</p></div>` +
-        (hits.length ? `<div class="rows">${hits.map(row).join('')}</div>` : `<p class="empty">Keine App passt zu „${esc(q)}“. <button type="button" id="clear">Suche zurücksetzen</button></p>`) + '</section>';
+      const hits = apps.filter(a => [a.name,a.full,a.tagline,a.category,a.about,tx(a,'tagline'),cat(a),tx(a,'about')].join(' ').toLowerCase().includes(q));
+      html = `<section class="shelf"><div class="shelf-h"><h2>${T.results} „${esc(q)}“</h2><p>${hits.length} ${T.found}</p></div>` +
+        (hits.length ? `<div class="rows">${hits.map(row).join('')}</div>` : `<p class="empty">${T.noHit} „${esc(q)}“. <button type="button" id="clear">${T.reset}</button></p>`) + '</section>';
     } else if (tab === 'all') {
       html = shelves.map(s => {
         const list = apps.filter(tabs.find(t => t.id === s.id).f);
@@ -315,9 +411,10 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     } else {
       const t = tabs.find(t => t.id === tab);
       const list = apps.filter(t.f);
-      html = `<section class="shelf"><div class="shelf-h"><h2>${t.label}</h2><p>${list.length} ${list.length===1?'Eintrag':'Einträge'}</p></div><div class="rows">${list.map(row).join('')}</div></section>`;
+      html = `<section class="shelf"><div class="shelf-h"><h2>${t.label}</h2><p>${list.length} ${list.length===1?T.entry:T.entries}</p></div><div class="rows">${list.map(row).join('')}</div></section>`;
     }
     $('#shelves').innerHTML = html;
+    if (view === 'tiles') document.querySelectorAll('#shelves .rows').forEach(r => r.classList.add('tiles'));
     const c = $('#clear'); if (c) c.onclick = () => { $('#q').value = ''; renderShelves(); $('#q').focus(); };
   }
   function setTab(id){ tab = id; $('#q').value=''; renderTabs(); renderShelves(); }
@@ -326,27 +423,27 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
   function open(id, push = true){
     const a = apps.find(x => x.id === id); if (!a) return;
     const btns = [];
-    if (a.play) btns.push(`<a class="btn" href="${a.play}" target="_blank" rel="noopener">${ico.play}<span><small>Jetzt bei</small>Google Play</span></a>`);
-    if (a.ios) btns.push(`<a class="btn" href="${a.ios}" target="_blank" rel="noopener">${ico.phone}<span><small>Laden im</small>App Store</span></a>`);
-    if (a.web) btns.push(`<a class="btn brand" href="${a.web}" target="_blank" rel="noopener">${ico.web}<span><small>Ohne Installation</small>Im Browser öffnen</span></a>`);
-    if (a.landing) btns.push(`<a class="btn ghost" href="${a.landing}" target="_blank" rel="noopener"><span><small>Alles über die App</small>Website ansehen</span></a>`);
+    if (a.play) btns.push(`<a class="btn" href="${a.play}" target="_blank" rel="noopener">${ico.play}<span><small>${T.nowAt}</small>Google Play</span></a>`);
+    if (a.ios) btns.push(`<a class="btn" href="${a.ios}" target="_blank" rel="noopener">${ico.phone}<span><small>${T.loadIn}</small>App Store</span></a>`);
+    if (a.web) btns.push(`<a class="btn brand" href="${a.web}" target="_blank" rel="noopener">${ico.web}<span><small>${T.noInst}</small>${T.inBrowser}</span></a>`);
+    if (a.landing) btns.push(`<a class="btn ghost" href="${a.landing}" target="_blank" rel="noopener"><span><small>${T.allAbout}</small>${T.site}</span></a>`);
     sheet.style.setProperty('--c', a.color);
     sheet.innerHTML = `
       <div class="d-head" style="--c:${a.color}">
-        <img src="${iconOf(a)}" alt="${esc(a.name)} App-Icon" width="112" height="112">
-        <div><h2 id="d-name">${esc(a.full)}</h2><p>${typeName[a.type]} · ${esc(a.category)}</p><div class="meta" style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">${tags(a)}</div></div>
-        <button class="x" type="button" aria-label="Schließen" data-close>×</button>
+        <img src="${iconOf(a)}" alt="${esc(a.name)} ${T.icon}" width="112" height="112">
+        <div><h2 id="d-name">${esc(a.full)}</h2><p>${typeName[a.type]} · ${esc(cat(a))}</p><div class="meta" style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">${tags(a)}</div></div>
+        <button class="x" type="button" aria-label="${T.close}" data-close>×</button>
       </div>
       <div class="d-body">
         <div class="cta">${btns.join('')}</div>
-        <p>${esc(a.about)}</p>
-        <h3>Das kann ${a.type==='game'?'das Spiel':'die App'}</h3>
-        <ul>${a.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
-        ${a.note ? `<p class="note">${esc(a.note)}</p>` : ''}
+        <p>${esc(tx(a,'about'))}</p>
+        <h3>${a.type==='game'?T.canGame:T.canApp}</h3>
+        <ul>${(tx(a,'features') || a.features).map(f => `<li>${esc(f)}</li>`).join('')}</ul>
+        ${tx(a,'note') ? `<p class="note">${esc(tx(a,'note'))}</p>` : ''}
         <div class="links">
-          ${a.privacy ? `<a href="${a.privacy}" target="_blank" rel="noopener">Datenschutz</a>` : ''}
-          <a href="mailto:flondy.dev@gmail.com?subject=${encodeURIComponent(a.full)}">Support</a>
-          <a href="#app=${a.id}" data-share>Link kopieren</a>
+          ${a.privacy ? `<a href="${a.privacy}" target="_blank" rel="noopener">${T.privacy}</a>` : ''}
+          <a href="mailto:flondy.dev@gmail.com?subject=${encodeURIComponent(a.full)}">${T.support}</a>
+          <a href="#app=${a.id}" data-share>${T.copy}</a>
         </div>
       </div>`;
     if (!sheet.open) sheet.showModal();
@@ -358,7 +455,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     if (e.target === sheet || e.target.closest('[data-close]')) close();
     const s = e.target.closest('[data-share]');
     if (s) { e.preventDefault(); const url = location.href.split('#')[0] + s.getAttribute('href');
-      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => { s.textContent = 'Link kopiert'; }, () => { s.textContent = url; }); }
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => { s.textContent = T.copied; }, () => { s.textContent = url; }); }
   });
 
   document.addEventListener('click', e => {
@@ -376,7 +473,9 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     try { localStorage.setItem('flondy-theme', root.dataset.theme); } catch (e) {}
   });
 
-  renderTabs(); renderFeat(); renderShelves();
+  renderTabs(); renderFeat(); renderShelves(); setView(view);
+  const fn = () => { const on = feat.scrollWidth > feat.clientWidth + 40; document.getElementById('fprev').hidden = document.getElementById('fnext').hidden = !on; };
+  fn(); addEventListener('resize', fn);
   const m = location.hash.match(/^#app=([\w-]+)/); if (m) open(m[1], false);
 })();
 </script>

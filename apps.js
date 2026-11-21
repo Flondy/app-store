@@ -295,6 +295,18 @@ window.FLONDY = {
       updated: '2026-11-18'
     },
     {
+      id: 'cinewave', name: 'CineWave', full: 'CineWave – Filme & Videos',
+      type: 'app', category: 'Unterhaltung', status: 'live', color: '#ff4f7a',
+      icon: 'https://marcel-2025.github.io/Cine-Wave-Landingpage/assets/icons/04_CineWave_Popcorn_512.png',
+      tagline: 'Dein eigenes Kino für lokale Videos.',
+      about: 'CineWave macht aus deinen Videoordnern ein eigenes Kino: Filme, Serien und eigene Videos mit Plakaten, Player-Skins und Designwelten. Ohne Cloud und ohne Konto – alles bleibt auf deinem Gerät. Schwester-App von Sound Wave.',
+      features: ['Lokale Bibliothek: Ordner hinzufügen, fertig', 'Filme, Serien und eigene Videos', 'Player mit Skins', 'Artwork Studio für Plakate', 'Mehrere Designwelten'],
+      play: 'https://play.google.com/store/apps/details?id=dev.flondy.cinewave',
+      landing: 'https://marcel-2025.github.io/Cine-Wave-Landingpage/',
+      privacy: 'https://marcel-2025.github.io/Cine-Wave-Landingpage/datenschutz.html',
+      updated: '2026-11-20'
+    },
+    {
       id: 'hexora', name: 'Hexora', full: 'Hexora – Reverse Engineering lernen',
       type: 'app', category: 'Lernen', status: 'dev', color: '#3ee08f',
       icon: 'https://marcel-2025.github.io/Hexora/assets/icon.png',

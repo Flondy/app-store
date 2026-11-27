@@ -271,6 +271,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
       <a href="https://flondy.github.io/Flondy.Dev/">Flondy.Dev</a>
       <a href="https://play.google.com/store/apps/dev?id=6892475632884505831" target="_blank" rel="noopener">Google Play</a>
       <a href="https://apps.apple.com/de/developer/marcel-single/id6823302676" target="_blank" rel="noopener">App Store</a>
+      <a href="https://apps.microsoft.com/search/publisher?name=Flondy+Dev.&amp;hl=de-DE&amp;gl=DE" target="_blank" rel="noopener">Microsoft Store</a>
       <a href="https://linktr.ee/flondy" target="_blank" rel="noopener">Linktree</a>
       <a href="https://t.me/Flondy" target="_blank" rel="noopener">Telegram</a>
       <a href="https://www.patreon.com/cw/Flondy" target="_blank" rel="noopener">Patreon</a>
@@ -331,6 +332,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const ico = {
+    win:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.5 4.5v7H3zM11.5 4.4 21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z"/></svg>',
     play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14.2-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg>',
     phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>',
     web:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>'
@@ -369,6 +371,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     const t = [];
     if (a.play) t.push('<span class="tag">Android</span>');
     if (a.ios) t.push('<span class="tag ios">iPhone</span>');
+    if (a.ms) t.push('<span class="tag">Windows</span>');
     if (a.web) t.push('<span class="tag">Browser</span>');
     if (a.status === 'dev') t.push(`<span class="tag dev">${T.inDev}</span>`);
     return t.join('');
@@ -425,6 +428,7 @@ dialog[open]{animation:sheet .38s cubic-bezier(.2,.8,.2,1)}
     const btns = [];
     if (a.play) btns.push(`<a class="btn" href="${a.play}" target="_blank" rel="noopener">${ico.play}<span><small>${T.nowAt}</small>Google Play</span></a>`);
     if (a.ios) btns.push(`<a class="btn" href="${a.ios}" target="_blank" rel="noopener">${ico.phone}<span><small>${T.loadIn}</small>App Store</span></a>`);
+    if (a.ms) btns.push(`<a class="btn" href="${a.ms}" target="_blank" rel="noopener">${ico.win}<span><small>${T.loadIn}</small>Microsoft Store</span></a>`);
     if (a.web) btns.push(`<a class="btn brand" href="${a.web}" target="_blank" rel="noopener">${ico.web}<span><small>${T.noInst}</small>${T.inBrowser}</span></a>`);
     if (a.landing) btns.push(`<a class="btn ghost" href="${a.landing}" target="_blank" rel="noopener"><span><small>${T.allAbout}</small>${T.site}</span></a>`);
     sheet.style.setProperty('--c', a.color);

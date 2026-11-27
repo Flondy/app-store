@@ -1,5 +1,5 @@
 /* Flondy – gemeinsame App-Daten für Flondy Store und Flondy.Dev
-   Stand: 20.11.2026 · Quelle: Google-Play-Entwicklerprofil, App-Store-Einträge, Projektordner.
+   Stand: 27.11.2026 · Quelle: Google-Play-Entwicklerprofil, App-Store-Einträge, Projektordner.
    Nur bestätigte Store-Links eintragen. Neue App = neuer Eintrag in dieser Liste. */
 window.FLONDY = {
   dev: {
@@ -7,6 +7,7 @@ window.FLONDY = {
     mail: 'flondy.dev@gmail.com',
     play: 'https://play.google.com/store/apps/dev?id=6892475632884505831',
     appStore: 'https://apps.apple.com/de/developer/marcel-single/id6823302676',
+    msStore: 'https://apps.microsoft.com/search/publisher?name=Flondy+Dev.&hl=de-DE&gl=DE',
     store: 'https://flondy.github.io/app-store/',
     site: 'https://flondy.github.io/Flondy.Dev/',
     socials: [
@@ -155,9 +156,10 @@ window.FLONDY = {
       id: 'lingo', name: 'Lingo Pro', full: 'Lingo Pro – Sprachen lernen',
       type: 'app', category: 'Lernen', status: 'live', color: '#f0a63c',
       tagline: 'Sprachen lernen in kurzen Lektionen.',
-      about: 'Lingo Pro ist jetzt für Android bei Google Play. Eine Sprachübung zum Ausprobieren gibt es weiterhin im Browser.',
-      features: ['Kurze Lektionen und Quiz', 'Lernpfad mit Ergebnissen', 'Zusätzlich: Übung im Browser'],
+      about: 'Lingo Pro gibt es für Android bei Google Play und für Windows im Microsoft Store. Eine Sprachübung zum Ausprobieren gibt es weiterhin im Browser.',
+      features: ['Kurze Lektionen und Quiz', 'Lernpfad mit Ergebnissen', 'Auch für Windows im Microsoft Store', 'Zusätzlich: Übung im Browser'],
       play: 'https://play.google.com/store/apps/details?id=dev.flondy.lingo.pro',
+      ms: 'https://apps.microsoft.com/detail/9nw23nj6s3w8',
       web: 'https://lingo-basic.vercel.app/',
       landing: 'https://marcel-2025.github.io/Lingo-Pro/',
       privacy: 'https://flondy.github.io/Lingo-Pro-privacy/'
@@ -363,7 +365,7 @@ window.FLONDY = {
     'medtracker-pro': {tagline:'Keep track of your medication, day by day.', about:'Tick off your doses every day and see in the calendar what was taken and what was not. You can fill in past periods later.', features:['Calendar: taken, missed, open','Medication list with suggestions','Daily check-off','Fill in past periods'], note:'Does not replace medical advice.'},
     'ema-mind': {tagline:'Understand your mood. Spot patterns.', about:'Short check-ins up to three times a day. Trends over 7, 30 and 90 days show you patterns. Your data stays on your device.', features:['Up to 3 short check-ins per day','Trends over 7, 30 and 90 days','Reminders','Data stays local','Export as CSV or JSON'], note:'A self-observation tool, not a diagnosis.'},
     'lumina-ai': {tagline:'Your imagination, illuminated. AI photo editing and videos in one studio.', about:'Lumina AI combines creative photo editing and AI video generation in one studio: edit photos with text prompts, turn images into moving scenes and combine looks in the Creative Studio. Free images every day; credit packs, Lumina Pro and Pro Lifetime are available as in-app purchases.', features:['Create images and videos from text','Edit and restyle photos with AI','Creative Studio: outfits, filters, backgrounds, light and poses','Free local filters with before/after view','Free images every day, standard and HQ up to 2K']},
-    'lingo': {tagline:'Learn languages in short lessons.', about:'Lingo Pro is now on Google Play for Android. A language exercise to try is still available in the browser.', features:['Short lessons and quizzes','Learning path with results','Plus: exercise in the browser']},
+    'lingo': {tagline:'Learn languages in short lessons.', about:'Lingo Pro is available for Android on Google Play and for Windows in the Microsoft Store.', features:['Short lessons and quizzes','Learning path with results','Also for Windows in the Microsoft Store','Plus: exercise in the browser']},
     'music': {tagline:'Music releases as a web app.', about:'The music web app shows new releases right in the browser.', features:['Runs in the browser','No installation']},
     'live-wallpapers': {tagline:'A little magic. For your screen.', about:'Fantasy art and animated live wallpapers by ArtIsFantasy: castles, forests and worlds of light in collections that change with the seasons.', features:['Fantasy motifs in themed collections','Animated live wallpapers for Android','Seasonal designs from Halloween to Christmas','Favourites and library','Premium collections with credits']},
     'winter-arcade': {tagline:'Five winter games. One adventure.', about:'Five mini games in a frosty arcade: Rolling Snowball, Penguin Slide, Frostbound Survivors, Penguin Push and Echo Run. Made with Unity 6 for Android and iPhone.', features:['Five standalone mini games','Action, puzzle, survival and party','Short rounds with touch controls','Star rating per round','Planned for Android and iPhone']},
